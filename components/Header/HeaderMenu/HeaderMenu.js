@@ -42,26 +42,8 @@ const A = styled.a`
   `}
 `;
 
-const HeaderMenu = ({
-  isAuthenticated,
-  isLogoutLoading,
-  logout,
-  name,
-}) => {
-  let logoutLink;
 
-  if (isAuthenticated && isLogoutLoading) {
-    // logoutLink = <Spinner size={16} />;
-  } else if (isAuthenticated) {
-    logoutLink = (
-      <A href="#" title="Logout" onClick={logout}>
-       <IconWrapper size={14} fill="transparent" stroke="#666" mr={1}>
-          <FontAwesomeIcon icon={faSignOutAlt} /> 
-        </IconWrapper>
-        Log out
-      </A>
-    );
-  }
+class HeaderMenu extends React.Component {
 
   // const login = (
     // <Modal
@@ -84,24 +66,31 @@ const HeaderMenu = ({
   //     <LoginModal closeModal={closeModal} />
   //   );
 
-  return (
-    <Flex
-      alignItems={['flex-end', 'center']}
-      flexDirection={['column', 'row']}
-      as="nav"
-    >
-      <Box mx={[0, 3]}>
-        {/* <Modal trigger={<Button responsive>+ Submit</Button>}>
-          {showSubmit}
-        </Modal> */}
-      </Box>
-      <Flex ml={[0, 2]} mt={[2, 0]} alignItems={['flex-end', 'center']}>
-        {name && <Name>{name},</Name>} 
-        {logoutLink}
-        {/* {login} */}
+  render() {
+    return (
+      <Flex
+        alignItems={['flex-end', 'center']}
+        flexDirection={['column', 'row']}
+        as="nav"
+      >
+        <Box mx={[0, 3]}>
+          <Button responsive>Login / Signup</Button>
+        </Box>
+        <Box mx={[0, 3]}>
+          <a href="#" title="Logout">
+            <IconWrapper size={14} fill="transparent" stroke="#666" mr={1}>
+              <FontAwesomeIcon icon={faSignOutAlt} /> 
+            </IconWrapper>
+            Log out
+          </a>
+        </Box>
+        <Flex ml={[0, 2]} mt={[2, 0]} alignItems={['flex-end', 'center']}>
+          {/* {logoutLink} */}
+          {/* {login} */}
+        </Flex>
       </Flex>
-    </Flex>
-  );
+    );
+  }
 };
 
 export default HeaderMenu;
