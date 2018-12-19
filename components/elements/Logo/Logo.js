@@ -20,7 +20,7 @@ const Image = styled.img`
 const Logo = () => (
   <Link href="/?sort=top" as="/">
     <a title="Telegram Directory">
-      {/* <Image src={LogoImage} alt="Telegram Directory" /> */}
+      Bung-In!
     </a>
   </Link>
 );
