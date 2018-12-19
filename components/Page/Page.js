@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled, { ThemeProvider, injectGlobal } from 'styled-components';
+import Body from '../Body';
 import Header from '../Header';
 import Meta from '../Meta';
 
@@ -14,14 +15,14 @@ const theme = {
 };
 
 const StyledPage = styled.div`
-  background: white;
-  color: ${props => props.theme.black};
+  /* background: white;
+  color: ${props => props.theme.black}; */
 `;
 
 const Inner = styled.div`
-  max-width: ${props => props.theme.maxWidth};
+  /* max-width: ${props => props.theme.maxWidth};
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2rem; */
 `;
 
 injectGlobal`
@@ -55,11 +56,13 @@ class Page extends Component {
   render() {
     return (
       <ThemeProvider theme={theme}>
-        <StyledPage>
-          <Meta />
-          <Header />
-          <Inner>{this.props.children}</Inner>
-        </StyledPage>
+        <Body>
+          <StyledPage>
+            <Meta />
+            <Header />
+            <Inner>{this.props.children}</Inner>
+          </StyledPage>
+        </Body>
       </ThemeProvider>
     );
   }
