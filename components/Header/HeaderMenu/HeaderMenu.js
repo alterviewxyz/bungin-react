@@ -2,8 +2,11 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { Box, Flex } from '@rebass/grid';
 import media from 'styled-media-query';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
 import Button from '../../elements/Button';
-import Spinner from '../../elements/Spinner';
+import IconWrapper from '../../elements/IconWrapper/IconWrapper';
+
 
 const Name = styled.span`
   padding-right: 16px;
@@ -48,11 +51,13 @@ const HeaderMenu = ({
   let logoutLink;
 
   if (isAuthenticated && isLogoutLoading) {
-    logoutLink = <Spinner size={16} />;
+    // logoutLink = <Spinner size={16} />;
   } else if (isAuthenticated) {
     logoutLink = (
       <A href="#" title="Logout" onClick={logout}>
-        <Icon name="logout" size={14} fill="transparent" stroke="#666" mr={1} />
+       <IconWrapper size={14} fill="transparent" stroke="#666" mr={1}>
+          <FontAwesomeIcon icon={faSignOutAlt} /> 
+        </IconWrapper>
         Log out
       </A>
     );
@@ -91,9 +96,9 @@ const HeaderMenu = ({
         </Modal> */}
       </Box>
       <Flex ml={[0, 2]} mt={[2, 0]} alignItems={['flex-end', 'center']}>
-        {/* {name && <Name>{name},</Name>} */}
-        {/* {logoutLink}
-        {login} */}
+        {name && <Name>{name},</Name>} 
+        {logoutLink}
+        {/* {login} */}
       </Flex>
     </Flex>
   );
