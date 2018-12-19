@@ -1,8 +1,20 @@
 import React, { Component } from 'react';
 import { Mutation } from 'react-apollo';
 import gql from 'graphql-tag';
+import { Flex } from '@rebass/grid';
+import styled from 'styled-components';
+import Form from '../styles/Form';
 import Error from '../ErrorMessage';
 import { CURRENT_USER_QUERY } from '../Queries/User';
+
+const InputWrapper = styled(Flex)`
+  position: relative;
+`;
+
+const Input = styled.input`
+
+`;
+
 
 const SIGNIN_MUTATION = gql`
   mutation SIGNIN_MUTATION($email: String!, $password: String!) {
@@ -32,7 +44,7 @@ class Signin extends Component {
         variables={this.state}
       >
         {(signup, { error, loading }) => (
-          <form
+          <Form
             method="post"
             onSubmit={async e => {
               e.preventDefault();
@@ -45,7 +57,7 @@ class Signin extends Component {
               <Error error={error} />
               <label htmlFor="email">
                 Email
-                <input
+                <Input
                   type="email"
                   name="email"
                   placeholder="email"
@@ -55,7 +67,7 @@ class Signin extends Component {
               </label>
               <label htmlFor="password">
                 Password
-                <input
+                <Input
                   type="password"
                   name="password"
                   placeholder="password"
@@ -66,7 +78,7 @@ class Signin extends Component {
 
               <button type="submit">Sign In!</button>
             </fieldset>
-          </form>
+          </Form>
         )}
       </Mutation>
     );
