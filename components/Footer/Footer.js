@@ -8,7 +8,7 @@ import { FooterLink } from '../elements/Typography';
 import styled from 'styled-components';
 import IconWrapper from '../elements/IconWrapper/IconWrapper';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee, faEnvelope} from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope} from '@fortawesome/free-solid-svg-icons'
 import { faTelegram, faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
 
 const List = styled(Flex).attrs({

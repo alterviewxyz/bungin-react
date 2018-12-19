@@ -45,6 +45,9 @@ injectGlobal`
     font-size: 1.5rem;
     line-height: 2;
     font-family: 'radnika_next';
+    color: rgb(102, 102, 102);
+    background-color: rgb(244, 245, 247);
+    font: 16px/1.5 Rubik, sans-serif;
   }
   a {
     text-decoration: none;
@@ -56,13 +59,14 @@ class Page extends Component {
   render() {
     return (
       <ThemeProvider theme={theme}>
-        <Body>
+        
           <StyledPage>
             <Meta />
             <Header />
-            <Inner>{this.props.children}</Inner>
+            <Body>
+              <Inner>{this.props.children}</Inner>
+            </Body>
           </StyledPage>
-        </Body>
       </ThemeProvider>
     );
   }
