@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Link from 'next/link';
 import styled from 'styled-components';
 import { Box, Flex } from '@rebass/grid';
 import media from 'styled-media-query';
@@ -73,10 +74,22 @@ class HeaderMenu extends React.Component {
         flexDirection={['column', 'row']}
         as="nav"
       >
-        <Box mx={[0, 3]}>
-          <Button responsive>Login / Signup</Button>
-        </Box>
-        <Box mx={[0, 3]}>
+        <Flex
+        alignItems={['flex-end', 'center']}
+        flexDirection={['column', 'row']}
+        as="div">
+          <Box mx={[0, 2]}>
+            <Link href="/signup" passHref>
+              <Button responsive>Signup</Button>
+            </Link>
+          </Box>
+          <Box mx={[0, 2]}>
+            <Link href="/signin" passHref>
+              <Button responsive>Login</Button>
+            </Link>
+          </Box>
+        </Flex>
+        <Box mx={[0, 2]}>
           <a href="#" title="Logout">
             <IconWrapper size={14} fill="transparent" stroke="#666" mr={1}>
               <FontAwesomeIcon icon={faSignOutAlt} /> 
