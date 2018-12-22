@@ -4,10 +4,8 @@ import styled from 'styled-components';
 import { Box, Flex } from '@rebass/grid';
 import media from 'styled-media-query';
 import User from '../../Queries/User';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
 import Button from '../../elements/Button';
-import IconWrapper from '../../elements/IconWrapper/IconWrapper';
+import Signout from '../../Signout';
 
 
 const Name = styled.span`
@@ -96,10 +94,7 @@ class HeaderMenu extends React.Component {
             )}
             {me && (
               <Box mx={[0, 2]}>
-                <IconWrapper size={14} fill="transparent" stroke="#666" mr={1}>
-                  <FontAwesomeIcon icon={faSignOutAlt} /> 
-                </IconWrapper>
-                Log out
+                <Signout/>
               </Box>
             )}
           </Flex>
