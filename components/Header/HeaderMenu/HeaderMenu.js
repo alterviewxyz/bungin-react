@@ -3,6 +3,7 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import { Box, Flex } from '@rebass/grid';
 import media from 'styled-media-query';
+import User from '../../Queries/User';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
 import Button from '../../elements/Button';
@@ -69,39 +70,41 @@ class HeaderMenu extends React.Component {
 
   render() {
     return (
-      <Flex
-        alignItems={['flex-end', 'center']}
-        flexDirection={['column', 'row']}
-        as="nav"
-      >
-        <Flex
-        alignItems={['flex-end', 'center']}
-        flexDirection={['column', 'row']}
-        as="div">
-          <Box mx={[0, 2]}>
-            <Link href="/signup" passHref>
-              <Button responsive>Signup</Button>
-            </Link>
-          </Box>
-          <Box mx={[0, 2]}>
-            <Link href="/signin" passHref>
-              <Button responsive>Login</Button>
-            </Link>
-          </Box>
-        </Flex>
-        <Box mx={[0, 2]}>
-          <a href="#" title="Logout">
-            <IconWrapper size={14} fill="transparent" stroke="#666" mr={1}>
-              <FontAwesomeIcon icon={faSignOutAlt} /> 
-            </IconWrapper>
-            Log out
-          </a>
-        </Box>
-        <Flex ml={[0, 2]} mt={[2, 0]} alignItems={['flex-end', 'center']}>
-          {/* {logoutLink} */}
-          {/* {login} */}
-        </Flex>
-      </Flex>
+      <User>
+        {({ data: { me } }) => (
+          <Flex
+            alignItems={['flex-end', 'center']}
+            flexDirection={['column', 'row']}
+            as="nav"
+          >
+            {!me && (
+              <Flex
+              alignItems={['flex-end', 'center']}
+              flexDirection={['column', 'row']}
+              as="div">
+                <Box mx={[0, 2]}>
+                  <Link href="/signup" passHref>
+                    <Button responsive>Signup</Button>
+                  </Link>
+                </Box>
+                <Box mx={[0, 2]}>
+                  <Link href="/signin" passHref>
+                    <Button responsive>Login</Button>
+                  </Link>
+                </Box>
+              </Flex>
+            )}
+            {me && (
+              <Box mx={[0, 2]}>
+                <IconWrapper size={14} fill="transparent" stroke="#666" mr={1}>
+                  <FontAwesomeIcon icon={faSignOutAlt} /> 
+                </IconWrapper>
+                Log out
+              </Box>
+            )}
+          </Flex>
+        )}
+      </User>
     );
   }
 };
