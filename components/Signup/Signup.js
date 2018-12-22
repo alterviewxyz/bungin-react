@@ -31,6 +31,7 @@ class Signup extends Component {
       <Mutation
         mutation={SIGNUP_MUTATION}
         variables={this.state}
+        refetchQueries={[{ query: CURRENT_USER_QUERY }]}
       >
         {(signup, { error, loading }) => (
           <Form
