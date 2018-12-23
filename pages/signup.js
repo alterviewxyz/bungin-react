@@ -20,7 +20,7 @@ const Left = styled.div`
 `;
 
 
-const Terms = (props) => (
+const SingupPage = (props) => (
     <Flex flex="1 1 auto" flexDirection="column">
         <Flex py={5} flexDirection="column" alignItems="center" as="section">
             <Container justifyContent="flex-start" flexDirection="column">
@@ -38,4 +38,4 @@ const Terms = (props) => (
     </Flex>
 );
 
-export default Terms;
+export default SingupPage;
