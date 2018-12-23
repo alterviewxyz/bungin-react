@@ -93,9 +93,16 @@ class HeaderMenu extends React.Component {
               </Flex>
             )}
             {me && (
-              <Box mx={[0, 2]}>
-                <Signout/>
-              </Box>
+              <>
+                <Box mx={[0, 2]}>
+                  <Signout/>
+                </Box>
+                <Box mx={[0, 2]}>
+                  <Link href="/add-podcast" passHref>
+                    <Button responsive>Add A Podcast!</Button>
+                  </Link>
+                </Box>
+              </>
             )}
           </Flex>
         )}

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
+import Link from 'next/link';
 import { Flex } from '@rebass/grid';
 import { Container } from '../elements/Layout';
 import Logo from '../elements/Logo';
@@ -19,7 +20,9 @@ class Header extends React.Component {
     return (
       <HeaderWrapper as="header">
         <Container alignItems="center" justifyContent="space-between">
-          <Logo />
+          <Link href="/">
+            <Logo />
+          </Link>
           <HeaderMenu />
         </Container>
       </HeaderWrapper>
