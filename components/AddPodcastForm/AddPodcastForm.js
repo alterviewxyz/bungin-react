@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Mutation } from 'react-apollo';
 import gql from 'graphql-tag';
+import Router from 'next/router';
 import { Flex } from '@rebass/grid';
 import styled from 'styled-components';
 import Form from '../styles/Form';
@@ -34,8 +35,12 @@ class AddPodcastForm extends Component {
             method="post"
             onSubmit={async e => {
               e.preventDefault();
-              await addpodcast();
+              const res = await addpodcast();
               this.setState({ rss: '' });
+              console.log(res);
+              Router.push({
+                pathname: '/p/' + res.data.addPodcastFromURL.id
+              });
             }}
           >
             <fieldset disabled={loading} aria-busy={loading}>
