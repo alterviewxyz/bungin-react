@@ -2,9 +2,10 @@
   "name": "bungin-frontend",
   "version": "0.0.01",
   "description": "Bungin Client with React, GraphQL, Next and Apollo",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "dev": "next -p 7777",
+    "olddev": "next -p 7777",
+    "dev": "nodemon server.js ",
     "build": "next build",
     "start": "next start",
     "test": "NODE_ENV=test jest --watch",
@@ -57,7 +58,8 @@
     "enzyme-to-json": "^3.3.4",
     "graphql-tools": "^4.0.0",
     "jest": "^23.6.0",
-    "jest-transform-graphql": "^2.1.0"
+    "jest-transform-graphql": "^2.1.0",
+    "nodemon": "^1.18.9"
   },
   "jest": {
     "setupTestFrameworkScriptFile": "<rootDir>/jest.setup.js",

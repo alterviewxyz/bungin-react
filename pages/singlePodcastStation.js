@@ -20,7 +20,7 @@ const Left = styled.div`
 `;
 
 
-const SinglePodcast = (props) => (
+const singlePodcastStation = (props) => (
     <Flex flex="1 1 auto" flexDirection="column">
         <Flex py={5} flexDirection="column" alignItems="center" as="section">
             <Container justifyContent="flex-start" flexDirection="column">
@@ -38,4 +38,4 @@ const SinglePodcast = (props) => (
     </Flex>
 );
 
-export default SinglePodcast;
+export default singlePodcastStation;
