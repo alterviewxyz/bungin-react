@@ -24,13 +24,13 @@ const singlePodcastStation = (props) => (
     <Flex flex="1 1 auto" flexDirection="column">
         <Flex py={5} flexDirection="column" alignItems="center" as="section">
             <Container justifyContent="flex-start" flexDirection="column">
-                <SloganTitle>Podcast ID is: {props.query.id}</SloganTitle>
+                <SloganTitle>Podcast slug is: {props.query.slug}</SloganTitle>
                 <Columns>       
                     <Right>
                         
                     </Right>
                     <Left>
-                        <PodcastInfoBox id={props.query.id} />
+                        <PodcastInfoBox slug={props.query.slug} />
                     </Left>
                 </Columns>
             </Container>

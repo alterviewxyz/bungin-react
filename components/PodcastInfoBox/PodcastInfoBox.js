@@ -13,8 +13,8 @@ const PodcastInfoBoxStyles = styled.div`
 `;
 
 const SINGLE_PODCAST_STATION_QUERY = gql`
-  query SINGLE_PODCAST_STATION_QUERY($id: ID!) {
-    podcastStation(where: { id: $id }) {
+  query SINGLE_PODCAST_STATION_QUERY($slug: String!) {
+    podcastStation(where: { slug: $slug }) {
       id
       title
       description
@@ -29,7 +29,7 @@ class PodcastInfoBox extends Component {
       <Query
         query={SINGLE_PODCAST_STATION_QUERY}
         variables={{
-          id: this.props.id,
+          slug: this.props.slug,
         }}
       >
         {({ error, loading, data }) => {

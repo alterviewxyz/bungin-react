@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 const Home = props => (
     <>
-        <Link as={`/p/cjpznji6caqjl0a988eiptvhr`} href={`/p?id=cjpznji6caqjl0a988eiptvhr`}>
+        <Link as={`/p/radio-marz`} href={`/p?slug=radio-marz`}>
             <p>A Sample Podcast!</p>
         </Link>
     </>
