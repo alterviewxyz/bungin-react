@@ -94,6 +94,9 @@ class PodcastCard extends Component {
                                 <Link as={`/editPodcast/` + this.props.item.slug} href={`/editPodcastStation?slug=` + this.props.item.slug}>
                                     <a>Edit</a>
                                 </Link>
+                                <Link href={`/publish/step1?id=` + this.props.item.id}>
+                                    <a>Publish</a>
+                                </Link>
                             </div>
                         </div>
                     </>
