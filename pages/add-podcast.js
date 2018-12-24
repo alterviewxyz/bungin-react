@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { SloganTitle } from '../components/elements/Typography';
 import { Container } from '../components/elements/Layout';
 import AddPodcastForm from '../components/AddPodcastForm';
+import PleaseSignIn from '../components/PleaseSignIn';
 
 const Columns = styled.div`
   display: grid;
@@ -24,15 +25,17 @@ const Add_Podcast = (props) => (
     <Flex flex="1 1 auto" flexDirection="column">
         <Flex py={5} flexDirection="column" alignItems="center" as="section">
             <Container justifyContent="flex-start" flexDirection="column">
-                <SloganTitle>Help Us Grow Our Diversity.</SloganTitle>
-                <Columns>
-                    <Right>
-                        <AddPodcastForm/>
-                    </Right>
-                    <Left>
-                        
-                    </Left>
-                </Columns>
+                <PleaseSignIn>
+                    <SloganTitle>Help Us Grow Our Diversity.</SloganTitle>
+                    <Columns>
+                        <Right>
+                            <AddPodcastForm/>
+                        </Right>
+                        <Left>
+                            
+                        </Left>
+                    </Columns>
+                </PleaseSignIn>
             </Container>
         </Flex>
     </Flex>
