@@ -152,6 +152,7 @@ const SINGLE_PODCAST_STATION_QUERY = gql`
     podcastStation(where: { slug: $slug }) {
       id
       title
+      pending
       description
       image
     }
@@ -186,6 +187,7 @@ class PodcastInfoBox extends Component {
                     <PodcastInfoBoxHero
                       title={item.title}
                       subTitle={item.description}
+                      pending={item.pending}
                     />
                   <PodcastInfoBoxDescription description={item.description} />
                 </div>
