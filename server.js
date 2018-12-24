@@ -13,6 +13,12 @@ app.prepare()
     const actualPage = '/singlePodcastStation'
     const queryParams = { slug: req.params.slug } 
     app.render(req, res, actualPage, queryParams)
+  })
+
+  server.get('/editPodcast/:slug', (req, res) => {
+    const actualPage = '/editPodcastStation'
+    const queryParams = { slug: req.params.slug } 
+    app.render(req, res, actualPage, queryParams)
   })  
 
   server.get('*', (req, res) => {
