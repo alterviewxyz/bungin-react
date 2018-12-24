@@ -4,7 +4,7 @@
   "description": "Bungin Client with React, GraphQL, Next and Apollo",
   "main": "server.js",
   "scripts": {
-    "olddev": "next -p 7777",
+    "olddev": "next -p 3000",
     "dev": "nodemon server.js ",
     "build": "next build",
     "start": "next start",
