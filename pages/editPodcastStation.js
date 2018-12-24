@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { SloganTitle } from '../components/elements/Typography';
 import { Container } from '../components/elements/Layout';
 import PodcastInfoBox from '../components/PodcastInfoBox';
+import EditPodcastForm from '../components/EditPodcastForm';
 
 const Columns = styled.div`
   display: grid;
@@ -19,7 +20,6 @@ const Left = styled.div`
 
 `;
 
-
 const editPodcastStation = (props) => (
     <Flex flex="1 1 auto" flexDirection="column">
         <Flex py={5} flexDirection="column" alignItems="center" as="section">
@@ -27,7 +27,7 @@ const editPodcastStation = (props) => (
                 <SloganTitle>Podcast slug is: {props.query.slug}</SloganTitle>
                 <Columns>       
                     <Right>
-                        
+                        <EditPodcastForm slug={props.query.slug} />
                     </Right>
                     <Left>
                         <PodcastInfoBox slug={props.query.slug} />
