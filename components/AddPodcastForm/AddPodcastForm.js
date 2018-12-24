@@ -12,6 +12,7 @@ const ADD_PODCAST_FROM_URL_MUTATION = gql`
   mutation ADD_PODCAST_FROM_URL_MUTATION($rss: String!) {
     addPodcastFromURL(rss: $rss) {
       id
+      slug
       rss
     }
   }
@@ -39,7 +40,7 @@ class AddPodcastForm extends Component {
               this.setState({ rss: '' });
               console.log(res);
               Router.push({
-                pathname: '/p/' + res.data.addPodcastFromURL.id
+                pathname: '/p/' + res.data.addPodcastFromURL.slug
               });
             }}
           >
