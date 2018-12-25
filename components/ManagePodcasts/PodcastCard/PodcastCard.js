@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import gql from "graphql-tag";
 import { Query } from "react-apollo";
 import Link from 'next/link';
-import Error from "../ErrorMessage";
+import Error from "../../ErrorMessage";
 import styled from "styled-components";
 
 const PodcastCardStyles = styled.div`

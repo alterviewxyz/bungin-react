@@ -4,9 +4,9 @@ import gql from 'graphql-tag';
 import Router from 'next/router';
 import { Flex } from '@rebass/grid';
 import styled from 'styled-components';
-import Form from '../styles/Form';
-import Error from '../ErrorMessage';
-import { CURRENT_USER_QUERY } from '../Queries/User';
+import Form from '../../styles/Form';
+import Error from '../../ErrorMessage';
+import { CURRENT_USER_QUERY } from '../../Queries/User';
 
 const SINGLE_PODCAST_STATION_QUERY = gql`
   query SINGLE_PODCAST_STATION_QUERY($id: ID!) {
@@ -62,6 +62,10 @@ class PublishPodcastForm extends Component {
       },
     });
     console.log('Updated!!');
+    Router.push({
+      pathname: '/publish/step2',
+      query: {id:this.props.id}
+    });
   };
 
   render() {
