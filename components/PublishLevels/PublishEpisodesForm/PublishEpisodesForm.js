@@ -5,6 +5,7 @@ import Router from 'next/router';
 import { Flex } from '@rebass/grid';
 import styled from 'styled-components';
 import Form from '../../styles/Form';
+import PodcastEpisodeCard from '../../PodcastEpisodeCard';
 import Error from '../../ErrorMessage';
 import { CURRENT_USER_QUERY } from '../../Queries/User';
 
@@ -106,6 +107,14 @@ class PublishEpisodesForm extends Component {
             {(createPodcastEpisode, { loading, error }) => (
               <Form onSubmit={e => this.createPodcastEpisode(e, createPodcastEpisode)}>
                 <button type="submit">Episode {this.state.nextToGo} of {this.state.length}!</button>
+                <PodcastEpisodeCard
+                  title={((this.state.Episodes || {})[this.state.nextToGo] || {}).title}
+                  podcastTitle="ChanelB"
+                  description={((this.state.Episodes || {})[this.state.nextToGo] || {}).content}
+                  image={((this.state.Episodes || {})[this.state.nextToGo] || {}).image }
+                  duration={((this.state.Episodes || {})[this.state.nextToGo] || {}).duration }
+                  episode={((this.state.Episodes || {})[this.state.nextToGo] || {}).episode }
+                />
               </Form>
             )}
           </Mutation>
