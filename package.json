@@ -39,6 +39,7 @@
     "npm": "^6.5.0",
     "nprogress": "^0.2.0",
     "prop-types": "^15.6.2",
+    "rc-progress": "^2.2.6",
     "react": "^16.5.2",
     "react-adopt": "^0.6.0",
     "react-apollo": "^2.2.1",
