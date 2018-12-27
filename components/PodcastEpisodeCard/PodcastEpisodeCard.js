@@ -210,11 +210,11 @@ class PodcastEpisodeCard extends Component {
                     </li>
                     <li>
                       <span className="icon icon-clock" />
-                      <span>{this.props.duration}</span>
+                      <span>{this.props.duration/60} minutes</span>
                     </li>
                     <li>
                       <span className="icon icon-level" />
-                      <span>Beginner level</span>
+                      <span>{this.props.date}</span>
                     </li>
                     <li>
                       <span className="icon icon-calories" />
