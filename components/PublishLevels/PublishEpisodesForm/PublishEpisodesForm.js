@@ -100,7 +100,7 @@ class PublishEpisodesForm extends Component {
     if((this.state.nextToGo) <= 0){
       Router.push({
         pathname: '/publish/step3',
-        query: {id:this.props.id}
+        query: {slug:this.state.podcastSlug}
       });
       return true;
     }
@@ -131,7 +131,7 @@ class PublishEpisodesForm extends Component {
             return <p>No Podcast Found for {this.props.id}</p>;
             const episodes = data.podcastStation.unProcessedFeed.episodes;
             const podcastTitle = data.podcastStation.title;
-
+            const podcastSlug = data.podcastStation.slug;
             //ُThis isn't the right what but I couldn't find any better way still
             const the_length = episodes.length - 1;
             console.log("episodes.length",the_length);
@@ -148,6 +148,7 @@ class PublishEpisodesForm extends Component {
                 image:          episodes[the_length].image,
                 duration:       episodes[the_length].duration,
                 publishDate:    episodes[the_length].published,
+                podcastSlug,
               }
             });
           return (
