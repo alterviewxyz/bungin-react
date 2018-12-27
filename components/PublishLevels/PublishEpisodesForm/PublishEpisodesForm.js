@@ -83,13 +83,6 @@ class PublishEpisodesForm extends Component {
 
   createPodcastEpisode = async (e, createPodcastEpisodeMutation) => {
     e.preventDefault();
-    if((this.state.nextToGo) < 0){
-      Router.push({
-        pathname: '/publish/step3',
-        query: {id:this.props.id}
-      });
-      return true;
-    }
     console.log('Create Podcast Episode!!');
     const res = await createPodcastEpisodeMutation({
       variables: {
@@ -104,6 +97,13 @@ class PublishEpisodesForm extends Component {
       },
     });
     console.log('Created!!',res);
+    if((this.state.nextToGo) <= 0){
+      Router.push({
+        pathname: '/publish/step3',
+        query: {id:this.props.id}
+      });
+      return true;
+    }
     this.setState({
       nextToGo:       this.state.nextToGo - 1,
       mp3:            this.state.episodes[this.state.nextToGo - 1].enclosure.url,
