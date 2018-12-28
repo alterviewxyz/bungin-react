@@ -2,7 +2,7 @@
 
 Bungin React Client is a website that helps you discover Persian Podcasts and subscribe to them.
 
-*Contributions and bug reports are welcome.*
+*For GraphQL server side see: [Bungin-Server](https://github.com/alterviewxyz/bungin-server)*
 
 [https://alterview.xyz](https://alterview.xyz)
 
@@ -10,7 +10,7 @@ Bungin React Client is a website that helps you discover Persian Podcasts and su
 [![Build Status](https://api.travis-ci.com/alterviewxyz/bungin-react.svg?branch=master)](https://travis-ci.com/alterviewxyz/bungin-react)
 [![Contributions](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](https://github.com/alterviewxyz/bungin-react/#contributing)
 [![GitHub license](https://img.shields.io/github/license/alterviewxyz/bungin-react.svg)](https://github.com/alterviewxyz/bungin-react/blob/develop/LICENSE)
-[![Twitter](https://img.shields.io/twitter/follow/alterviewxyz.svg?label=Follow&style=social?style=plastic)](https://twitter.com/alterview.xyz)
+[![Twitter](https://img.shields.io/twitter/follow/alterviewxyz.svg?label=Follow&style=social?style=plastic)](https://twitter.com/alterviewxyz)
 
 ## Table of Contents
 * [Key Features](#key-features)
