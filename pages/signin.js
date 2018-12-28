@@ -29,9 +29,7 @@ const SigninPage = (props) => (
                     <Right>
                         <Signin/>
                     </Right>
-                    <Left>
-                        
-                    </Left>
+                    <Left />
                 </Columns>
             </Container>
         </Flex>

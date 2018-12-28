@@ -20,7 +20,7 @@ const Add_Podcast = (props) => (
             <Container justifyContent="flex-start" flexDirection="column">
                 <PleaseSignIn>
                     <SloganTitle>Finally! The podcast is here! If everything is alright you can now navigate to podcast page at 
-                    <Link as={`/p/` + props.query.slug} href={`/singlePodcastStation?slug=` + props.query.slug}>
+                    <Link as={`/p/${  props.query.slug}`} href={`/singlePodcastStation?slug=${  props.query.slug}`}>
                         <a> it's page.</a>
                     </Link>
                     </SloganTitle>

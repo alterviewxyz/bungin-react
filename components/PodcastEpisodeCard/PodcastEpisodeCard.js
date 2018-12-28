@@ -1,10 +1,8 @@
 import React, { Component } from "react";
 import gql from "graphql-tag";
 import { Query } from "react-apollo";
-import Error from "../ErrorMessage";
 import styled from "styled-components";
 import Head from "next/head";
-import IconWrapper from "../elements/IconWrapper/IconWrapper";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faEye,
@@ -12,12 +10,14 @@ import {
   faEnvelope,
   faShareAlt
 } from "@fortawesome/free-solid-svg-icons";
+import IconWrapper from "../elements/IconWrapper/IconWrapper";
+import Error from "../ErrorMessage";
 
 
 
 // принимает строку и лимит после скольки знаков искать пробел и обрезать
 function getExcerpt( str = "", limit ){
-  return str.substr( 0, str.lastIndexOf( ' ', limit ) ) + '...';
+  return `${str.substr( 0, str.lastIndexOf( ' ', limit ) )  }...`;
 }
 
 

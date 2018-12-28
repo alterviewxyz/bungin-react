@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import gql from "graphql-tag";
 import { Query } from "react-apollo";
 import Link from 'next/link';
-import Error from "../../ErrorMessage";
 import styled from "styled-components";
+import Error from "../../ErrorMessage";
 
 const PodcastCardStyles = styled.div`
     transform: translate(0%,0%);
@@ -79,7 +79,7 @@ class PodcastCard extends Component {
     render() {
         return (
             <PodcastCardStyles>
-                <Link as={`/p/` + this.props.item.slug} href={`/singlePodcastStation?slug=` + this.props.item.slug}>
+                <Link as={`/p/${  this.props.item.slug}`} href={`/singlePodcastStation?slug=${  this.props.item.slug}`}>
                     <>
                         <div className="image">
                             <img src={this.props.item.image} alt={this.props.item.title} />
@@ -91,10 +91,10 @@ class PodcastCard extends Component {
                                     {this.props.item.title}
                                 </h1>
                                 <p>{this.props.item.description}</p>
-                                <Link as={`/editPodcast/` + this.props.item.slug} href={`/editPodcastStation?slug=` + this.props.item.slug}>
+                                <Link as={`/editPodcast/${  this.props.item.slug}`} href={`/editPodcastStation?slug=${  this.props.item.slug}`}>
                                     <a>Edit</a>
                                 </Link>
-                                <Link href={`/publish/step1?id=` + this.props.item.id}>
+                                <Link href={`/publish/step1?id=${  this.props.item.id}`}>
                                     <a>Publish</a>
                                 </Link>
                             </div>

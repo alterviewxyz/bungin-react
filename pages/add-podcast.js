@@ -31,9 +31,7 @@ const Add_Podcast = (props) => (
                         <Right>
                             <AddPodcastForm/>
                         </Right>
-                        <Left>
-                            
-                        </Left>
+                        <Left />
                     </Columns>
                 </PleaseSignIn>
             </Container>

@@ -26,9 +26,7 @@ const singlePodcastStation = (props) => (
             <Container justifyContent="flex-start" flexDirection="column">
                 <SloganTitle>Podcast slug is: {props.query.slug}</SloganTitle>
                 <Columns>       
-                    <Right>
-                        
-                    </Right>
+                    <Right />
                     <Left>
                         <PodcastInfoBox slug={props.query.slug} />
                     </Left>

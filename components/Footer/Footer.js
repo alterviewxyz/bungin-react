@@ -2,14 +2,14 @@ import * as React from 'react';
 import { Flex } from '@rebass/grid';
 import Link from 'next/link';
 import media from 'styled-media-query';
-import { Container } from '../elements/Layout';
-import Logo from '../elements/Logo';
-import { FooterLink } from '../elements/Typography';
 import styled from 'styled-components';
-import IconWrapper from '../elements/IconWrapper/IconWrapper';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope} from '@fortawesome/free-solid-svg-icons'
 import { faTelegram, faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { Container } from '../elements/Layout';
+import Logo from '../elements/Logo';
+import { FooterLink } from '../elements/Typography';
+import IconWrapper from '../elements/IconWrapper/IconWrapper';
 
 const List = styled(Flex).attrs({
   alignItems: 'center',

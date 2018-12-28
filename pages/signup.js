@@ -29,9 +29,7 @@ const SingupPage = (props) => (
                     <Right>
                         <Signup/>
                     </Right>
-                    <Left>
-                        
-                    </Left>
+                    <Left />
                 </Columns>
             </Container>
         </Flex>
