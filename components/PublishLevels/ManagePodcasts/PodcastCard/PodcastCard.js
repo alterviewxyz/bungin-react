@@ -3,7 +3,7 @@ import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
 import Link from 'next/link';
 import styled from 'styled-components';
-import Error from '../../ErrorMessage';
+import Error from '../../../ErrorMessage';
 
 const PodcastCardStyles = styled.div`
   transform: translate(0%, 0%);

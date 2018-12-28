@@ -3,8 +3,8 @@ import gql from 'graphql-tag';
 import React from 'react';
 import { Flex } from '@rebass/grid';
 import styled from 'styled-components';
-import { Container } from '../elements/Layout';
-import PleaseSignIn from '../PleaseSignIn';
+import { Container } from '../../elements/Layout';
+import PleaseSignIn from '../../PleaseSignIn';
 import PodcastCard from './PodcastCard';
 
 const ALL_PODCAST_STATIONS_QUERY = gql`

@@ -3,7 +3,7 @@ import { Flex } from '@rebass/grid';
 import styled from 'styled-components';
 import { SloganTitle } from '../components/elements/Typography';
 import { Container } from '../components/elements/Layout';
-import ManagePodcasts from '../components/ManagePodcasts';
+import ManagePodcasts from '../components/PublishLevels/ManagePodcasts';
 import PleaseSignIn from '../components/PleaseSignIn';
 
 const Columns = styled.div`
