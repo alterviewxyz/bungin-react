@@ -34,7 +34,7 @@ const PodcastInfoBoxStyles = styled.div`
   }
 
   .movie-card {
-    font: 14px/22px "Lato", Arial, sans-serif;
+    font: 14px/22px sans-serif;
     color: #a9a8a3;
     padding: 40px 0;
   }
@@ -155,6 +155,15 @@ const SINGLE_PODCAST_STATION_QUERY = gql`
       pending
       description
       image
+      subscribed
+      episodesId
+      latestEpisode
+      category
+      tag
+      copyright
+      rating
+      website
+      author
     }
   }
 `;
