@@ -16,20 +16,17 @@ const Right = styled.div`
   grid-area: menu;
 `;
 
-const Left = styled.div`
+const Left = styled.div``;
 
-`;
-
-
-const Add_Podcast = (props) => (
-    <Flex flex="1 1 auto" flexDirection="column">
-            <Container justifyContent="flex-start" flexDirection="column">
-                <PleaseSignIn>
-                    <SloganTitle>Manage And Publish Pending Podcasts.</SloganTitle>
-                    <ManagePodcasts/>
-                </PleaseSignIn>
-            </Container>
-    </Flex>
+const Add_Podcast = props => (
+  <Flex flex="1 1 auto" flexDirection="column">
+    <Container justifyContent="flex-start" flexDirection="column">
+      <PleaseSignIn>
+        <SloganTitle>Manage And Publish Pending Podcasts.</SloganTitle>
+        <ManagePodcasts />
+      </PleaseSignIn>
+    </Container>
+  </Flex>
 );
 
 export default Add_Podcast;

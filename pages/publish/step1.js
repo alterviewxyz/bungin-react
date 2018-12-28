@@ -12,20 +12,19 @@ const Columns = styled.div`
   grid-gap: 20px;
 `;
 
-
-const Add_Podcast = (props) => (
-    <Flex flex="1 1 auto" flexDirection="column">
-        <Flex py={5} flexDirection="column" alignItems="center" as="section">
-            <Container justifyContent="flex-start" flexDirection="column">
-                <PleaseSignIn>
-                    <SloganTitle>Help Us Grow Our Diversity.</SloganTitle>
-                    <Columns>
-                        <PublishPodcastForm  id={props.query.id} />
-                    </Columns>
-                </PleaseSignIn>
-            </Container>
-        </Flex>
+const Add_Podcast = ({ id }) => (
+  <Flex flex="1 1 auto" flexDirection="column">
+    <Flex py={5} flexDirection="column" alignItems="center" as="section">
+      <Container justifyContent="flex-start" flexDirection="column">
+        <PleaseSignIn>
+          <SloganTitle>Help Us Grow Our Diversity.</SloganTitle>
+          <Columns>
+            <PublishPodcastForm id={id} />
+          </Columns>
+        </PleaseSignIn>
+      </Container>
     </Flex>
+  </Flex>
 );
 
 export default Add_Podcast;

@@ -15,25 +15,22 @@ const Right = styled.div`
   grid-area: menu;
 `;
 
-const Left = styled.div`
+const Left = styled.div``;
 
-`;
-
-
-const singlePodcastStation = (props) => (
-    <Flex flex="1 1 auto" flexDirection="column">
-        <Flex py={5} flexDirection="column" alignItems="center" as="section">
-            <Container justifyContent="flex-start" flexDirection="column">
-                <SloganTitle>Podcast slug is: {props.query.slug}</SloganTitle>
-                <Columns>       
-                    <Right />
-                    <Left>
-                        <PodcastInfoBox slug={props.query.slug} />
-                    </Left>
-                </Columns>
-            </Container>
-        </Flex>
+const singlePodcastStation = ({ slug }) => (
+  <Flex flex="1 1 auto" flexDirection="column">
+    <Flex py={5} flexDirection="column" alignItems="center" as="section">
+      <Container justifyContent="flex-start" flexDirection="column">
+        <SloganTitle>Podcast slug is: {slug}</SloganTitle>
+        <Columns>
+          <Right />
+          <Left>
+            <PodcastInfoBox slug={slug} />
+          </Left>
+        </Columns>
+      </Container>
     </Flex>
+  </Flex>
 );
 
 export default singlePodcastStation;

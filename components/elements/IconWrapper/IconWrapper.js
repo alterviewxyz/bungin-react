@@ -1,14 +1,12 @@
 import styled, { css } from 'styled-components';
+import React from 'react';
 import { Flex } from '@rebass/grid';
 import { prop } from 'styled-tools';
 import media from 'styled-media-query';
 
-
-const IconWrapper = styled(
-  ({ fill, hoverFill, size, stroke, ...rest }) => (
-    <Flex {...rest} alignItems="center" justifyContent="center" as="span" />
-  )
-)`
+const IconWrapper = styled(({ fill, hoverFill, size, stroke, ...rest }) => (
+  <Flex {...rest} alignItems="center" justifyContent="center" as="span" />
+))`
   svg {
     width: ${prop('size', 16)}px;
     height: auto;

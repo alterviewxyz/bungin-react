@@ -15,25 +15,22 @@ const Right = styled.div`
   grid-area: menu;
 `;
 
-const Left = styled.div`
+const Left = styled.div``;
 
-`;
-
-
-const SigninPage = (props) => (
-    <Flex flex="1 1 auto" flexDirection="column">
-        <Flex py={5} flexDirection="column" alignItems="center" as="section">
-            <Container justifyContent="flex-start" flexDirection="column">
-                <SloganTitle>Login to your account.</SloganTitle>
-                <Columns>
-                    <Right>
-                        <Signin/>
-                    </Right>
-                    <Left />
-                </Columns>
-            </Container>
-        </Flex>
+const SigninPage = props => (
+  <Flex flex="1 1 auto" flexDirection="column">
+    <Flex py={5} flexDirection="column" alignItems="center" as="section">
+      <Container justifyContent="flex-start" flexDirection="column">
+        <SloganTitle>Login to your account.</SloganTitle>
+        <Columns>
+          <Right>
+            <Signin />
+          </Right>
+          <Left />
+        </Columns>
+      </Container>
     </Flex>
+  </Flex>
 );
 
 export default SigninPage;

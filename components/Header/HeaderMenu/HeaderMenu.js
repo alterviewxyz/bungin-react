@@ -7,7 +7,6 @@ import User from '../../Queries/User';
 import Button from '../../elements/Button';
 import Signout from '../../Signout';
 
-
 const Name = styled.span`
   padding-right: 16px;
   font-size: 14px;
@@ -42,24 +41,22 @@ const A = styled.a`
   `}
 `;
 
-
 class HeaderMenu extends React.Component {
-
   // const login = (
-    // <Modal
-    //   trigger={
-    //     isAuthenticated ? null : (
-    //       <A href="#" title="Login or sign up">
-    //         Log in / Sign Up
-    //       </A>
-    //     )
-    //   }
-    // >
-    //   {closeModal => <LoginModal closeModal={closeModal} />}
-    // </Modal>
+  // <Modal
+  //   trigger={
+  //     isAuthenticated ? null : (
+  //       <A href="#" title="Login or sign up">
+  //         Log in / Sign Up
+  //       </A>
+  //     )
+  //   }
+  // >
+  //   {closeModal => <LoginModal closeModal={closeModal} />}
+  // </Modal>
   // );
 
-  // const showSubmit = closeModal => 
+  // const showSubmit = closeModal =>
   //   isAuthenticated ? (
   //     <SubmitModal closeModal={closeModal} />
   //   ) : (
@@ -77,9 +74,10 @@ class HeaderMenu extends React.Component {
           >
             {!me && (
               <Flex
-              alignItems={['flex-end', 'center']}
-              flexDirection={['column', 'row']}
-              as="div">
+                alignItems={['flex-end', 'center']}
+                flexDirection={['column', 'row']}
+                as="div"
+              >
                 <Box mx={[0, 2]}>
                   <Link href="/signup" passHref>
                     <Button responsive>Signup</Button>
@@ -95,7 +93,7 @@ class HeaderMenu extends React.Component {
             {me && (
               <>
                 <Box mx={[0, 2]}>
-                  <Signout/>
+                  <Signout />
                 </Box>
                 <Box mx={[0, 2]}>
                   <Link href="/add-podcast" passHref>
@@ -109,6 +107,6 @@ class HeaderMenu extends React.Component {
       </User>
     );
   }
-};
+}
 
 export default HeaderMenu;

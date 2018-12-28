@@ -8,7 +8,11 @@ import Error from '../ErrorMessage';
 import { CURRENT_USER_QUERY } from '../Queries/User';
 
 const SIGNUP_MUTATION = gql`
-  mutation SIGNUP_MUTATION($email: String!, $name: String!, $password: String!) {
+  mutation SIGNUP_MUTATION(
+    $email: String!
+    $name: String!
+    $password: String!
+  ) {
     signup(email: $email, name: $name, password: $password) {
       id
       email
@@ -21,12 +25,13 @@ class Signup extends Component {
   state = {
     name: '',
     password: '',
-    email: '',
+    email: ''
   };
   saveToState = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
   render() {
+    const { email, name, password } = this.state;
     return (
       <Mutation
         mutation={SIGNUP_MUTATION}
@@ -51,7 +56,7 @@ class Signup extends Component {
                   type="email"
                   name="email"
                   placeholder="email"
-                  value={this.state.email}
+                  value={email}
                   onChange={this.saveToState}
                 />
               </label>
@@ -61,7 +66,7 @@ class Signup extends Component {
                   type="text"
                   name="name"
                   placeholder="name"
-                  value={this.state.name}
+                  value={name}
                   onChange={this.saveToState}
                 />
               </label>
@@ -71,7 +76,7 @@ class Signup extends Component {
                   type="password"
                   name="password"
                   placeholder="password"
-                  value={this.state.password}
+                  value={password}
                   onChange={this.saveToState}
                 />
               </label>

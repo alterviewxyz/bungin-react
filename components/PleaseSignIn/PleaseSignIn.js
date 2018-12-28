@@ -1,3 +1,4 @@
+import React from 'react';
 import { Query } from 'react-apollo';
 import { CURRENT_USER_QUERY } from '../Queries/User';
 import Signin from '../Signin';

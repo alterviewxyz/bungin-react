@@ -1,58 +1,58 @@
-import React, { Component } from "react";
-import styled from "styled-components";
+import React, { Component } from 'react';
+import styled from 'styled-components';
 
 const DescriptionStyles = styled.div`
-    bottom: 0px;
-    height: 200px;
-    font-size: 16px;
-    line-height: 26px;
-    color: #B1B0AC;
+  bottom: 0px;
+  height: 200px;
+  font-size: 16px;
+  line-height: 26px;
+  color: #b1b0ac;
 
-    .column1 {
-        padding-left: 50px;
-        padding-top: 120px;
-        width: 220px;
-        float: left;
-        text-align: center;
+  .column1 {
+    padding-left: 50px;
+    padding-top: 120px;
+    width: 220px;
+    float: left;
+    text-align: center;
+  }
+
+  .tag {
+    background: white;
+    border-radius: 10px;
+    padding: 3px 8px;
+    font-size: 14px;
+    margin-right: 4px;
+    line-height: 35px;
+    cursor: pointer;
+  }
+
+  .tag:hover {
+    background: #ddd;
+  }
+
+  .column2 {
+    padding-left: 41px;
+    padding-top: 30px;
+    margin-left: 20px;
+    width: 480px;
+    float: left;
+  }
+
+  .avatars {
+    margin-top: 23px;
+
+    img {
+      cursor: pointer;
     }
 
-    .tag {
-        background: white;
-        border-radius: 10px;
-        padding: 3px 8px;
-        font-size: 14px;
-        margin-right: 4px;
-        line-height: 35px;
-        cursor: pointer;
+    img:hover {
+      opacity: 0.6;
     }
 
-    .tag:hover {
-        background: #ddd;
+    a:hover {
+      text-decoration: none;
     }
-
-    .column2 {
-        padding-left: 41px;
-        padding-top: 30px;
-        margin-left: 20px;
-        width: 480px;
-        float: left;
-    }
-
-    .avatars {
-        margin-top: 23px;
-        
-        img {
-        cursor: pointer;
-        }
-        
-        img:hover {
-        opacity: 0.6;
-        }
-        
-        a:hover {
-        text-decoration: none;
-        }
-    }
+  }
 `;
 
 const PodcastInfoBoxDescription = props => (
@@ -63,7 +63,10 @@ const PodcastInfoBoxDescription = props => (
     </div>
     <div className="column2">
       <p>
-        {props.description}
+        {
+          // eslint-disable-next-line react/destructuring-assignment
+          props.description
+        }
         {/* <a href="#">read more</a> */}
       </p>
 

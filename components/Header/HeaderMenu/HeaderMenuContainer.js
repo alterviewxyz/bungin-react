@@ -5,14 +5,13 @@ class HeaderMenuContainer extends React.Component {
   render() {
     return (
       <HeaderMenu
-        // isAuthenticated={true}
-        // isLogoutLoading={false}
-        // logout={this.logout}
-        // name={"John Doe"}
+      // isAuthenticated={true}
+      // isLogoutLoading={false}
+      // logout={this.logout}
+      // name={"John Doe"}
       />
     );
   }
 }
 
-
-export default (HeaderMenuContainer);
+export default HeaderMenuContainer;

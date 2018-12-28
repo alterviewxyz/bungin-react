@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React, { Component } from 'react';
 import { Mutation, Query } from 'react-apollo';
 import gql from 'graphql-tag';
@@ -66,35 +67,45 @@ class PublishPodcastForm extends Component {
   };
 
   updatePodcastStation = async (e, updatePodcastStationMutation) => {
+    const { id } = this.props;
     e.preventDefault();
     console.log('Updating Podcast Station!!');
     console.log(this.state);
     const res = await updatePodcastStationMutation({
       variables: {
-        id: this.props.id,
+        id: id,
         data: this.state
       }
     });
     console.log('Updated!!');
     Router.push({
       pathname: '/publish/step2',
-      query: { id: this.props.id }
+      query: { id }
     });
   };
 
   render() {
+    const { id } = this.props;
+    const {
+      rss,
+      slug,
+      title,
+      language,
+      description,
+      image,
+      website
+    } = this.state;
     return (
       <Query
         query={SINGLE_PODCAST_STATION_QUERY}
         variables={{
-          id: this.props.id
+          id: id
         }}
       >
         {({ error, loading, data }) => {
           if (error) return <Error error={error} />;
           if (loading) return <p>Loading...</p>;
-          if (!data.podcastStation)
-            return <p>No Podcast Found for {this.props.id}</p>;
+          if (!data.podcastStation) return <p>No Podcast Found for {id}</p>;
           const item = data.podcastStation;
           return (
             <Mutation mutation={UPDATE_PODCAST_STATION} variables={this.state}>
@@ -114,7 +125,7 @@ class PublishPodcastForm extends Component {
                         type="text"
                         name="rss"
                         placeholder="Put RSS URL here..."
-                        value={this.state.rss}
+                        value={rss}
                         onChange={this.saveToState}
                         defaultValue={data.podcastStation.rss}
                       />
@@ -126,7 +137,7 @@ class PublishPodcastForm extends Component {
                         type="text"
                         name="slug"
                         placeholder="Put slug here..."
-                        value={this.state.slug}
+                        value={slug}
                         onChange={this.saveToState}
                         defaultValue={data.podcastStation.slug}
                       />
@@ -138,7 +149,7 @@ class PublishPodcastForm extends Component {
                         type="text"
                         name="title"
                         placeholder="Put title here..."
-                        value={this.state.title}
+                        value={title}
                         onChange={this.saveToState}
                         defaultValue={data.podcastStation.title}
                       />
@@ -150,7 +161,7 @@ class PublishPodcastForm extends Component {
                         type="text"
                         name="language"
                         placeholder="Put language here..."
-                        value={this.state.language}
+                        value={language}
                         onChange={this.saveToState}
                         defaultValue={data.podcastStation.language}
                       />
@@ -162,7 +173,7 @@ class PublishPodcastForm extends Component {
                         type="text"
                         name="description"
                         placeholder="Put description here..."
-                        value={this.state.description}
+                        value={description}
                         onChange={this.saveToState}
                         defaultValue={data.podcastStation.description}
                       />
@@ -174,7 +185,7 @@ class PublishPodcastForm extends Component {
                         type="text"
                         name="image"
                         placeholder="Put image here..."
-                        value={this.state.image}
+                        value={image}
                         onChange={this.saveToState}
                         defaultValue={data.podcastStation.image}
                       />
@@ -186,7 +197,7 @@ class PublishPodcastForm extends Component {
                         type="text"
                         name="website"
                         placeholder="Put website here..."
-                        value={this.state.website}
+                        value={website}
                         onChange={this.saveToState}
                         defaultValue={data.podcastStation.website}
                       />

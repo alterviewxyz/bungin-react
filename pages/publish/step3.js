@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import * as React from 'react';
 import { Flex } from '@rebass/grid';
 import styled from 'styled-components';
@@ -13,21 +14,22 @@ const Columns = styled.div`
   grid-gap: 20px;
 `;
 
-
-const Add_Podcast = (props) => (
-    <Flex flex="1 1 auto" flexDirection="column">
-        <Flex py={5} flexDirection="column" alignItems="center" as="section">
-            <Container justifyContent="flex-start" flexDirection="column">
-                <PleaseSignIn>
-                    <SloganTitle>Finally! The podcast is here! If everything is alright you can now navigate to podcast page at 
-                    <Link as={`/p/${  props.query.slug}`} href={`/singlePodcastStation?slug=${  props.query.slug}`}>
-                        <a> it's page.</a>
-                    </Link>
-                    </SloganTitle>
-                </PleaseSignIn>
-            </Container>
-        </Flex>
+const Add_Podcast = ({ slug }) => (
+  <Flex flex="1 1 auto" flexDirection="column">
+    <Flex py={5} flexDirection="column" alignItems="center" as="section">
+      <Container justifyContent="flex-start" flexDirection="column">
+        <PleaseSignIn>
+          <SloganTitle>
+            Finally! The podcast is here! If everything is alright you can now
+            navigate to podcast page at
+            <Link as={`/p/${slug}`} href={`/singlePodcastStation?slug=${slug}`}>
+              <a> it's page.</a>
+            </Link>
+          </SloganTitle>
+        </PleaseSignIn>
+      </Container>
     </Flex>
+  </Flex>
 );
 
 export default Add_Podcast;

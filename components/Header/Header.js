@@ -8,7 +8,7 @@ import HeaderMenu from './HeaderMenu';
 
 const HeaderWrapper = styled(Flex).attrs({
   alignItems: 'center',
-  justifyContent: 'center',
+  justifyContent: 'center'
 })`
   background-color: white;
   height: 80px;

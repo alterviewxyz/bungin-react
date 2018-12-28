@@ -15,25 +15,22 @@ const Right = styled.div`
   grid-area: menu;
 `;
 
-const Left = styled.div`
+const Left = styled.div``;
 
-`;
-
-
-const SingupPage = (props) => (
-    <Flex flex="1 1 auto" flexDirection="column">
-        <Flex py={5} flexDirection="column" alignItems="center" as="section">
-            <Container justifyContent="flex-start" flexDirection="column">
-                <SloganTitle>Signup for an account.</SloganTitle>
-                <Columns>
-                    <Right>
-                        <Signup/>
-                    </Right>
-                    <Left />
-                </Columns>
-            </Container>
-        </Flex>
+const SingupPage = props => (
+  <Flex flex="1 1 auto" flexDirection="column">
+    <Flex py={5} flexDirection="column" alignItems="center" as="section">
+      <Container justifyContent="flex-start" flexDirection="column">
+        <SloganTitle>Signup for an account.</SloganTitle>
+        <Columns>
+          <Right>
+            <Signup />
+          </Right>
+          <Left />
+        </Columns>
+      </Container>
     </Flex>
+  </Flex>
 );
 
 export default SingupPage;

@@ -4,6 +4,11 @@
   "rules": {
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/prefer-stateless-function": [0, { "ignorePureComponents": false }],
-    "jsx-a11y/anchor-is-valid": [0, {}]
-  }
+    "jsx-a11y/anchor-is-valid": [0, {}],
+    "no-unused-vars": [1, {}],
+    "react/prop-types": [1, {}],
+    "react/forbid-prop-types": [1, {}],
+    "import/no-extraneous-dependencies": [2, { "devDependencies": true }]
+  },
+  "parser": "babel-eslint"
 }

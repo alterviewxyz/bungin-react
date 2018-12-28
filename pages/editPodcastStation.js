@@ -16,26 +16,24 @@ const Right = styled.div`
   grid-area: menu;
 `;
 
-const Left = styled.div`
+const Left = styled.div``;
 
-`;
-
-const editPodcastStation = (props) => (
-    <Flex flex="1 1 auto" flexDirection="column">
-        <Flex py={5} flexDirection="column" alignItems="center" as="section">
-            <Container justifyContent="flex-start" flexDirection="column">
-                <SloganTitle>Podcast slug is: {props.query.slug}</SloganTitle>
-                <Columns>       
-                    <Right>
-                        <EditPodcastForm slug={props.query.slug} />
-                    </Right>
-                    <Left>
-                        <PodcastInfoBox slug={props.query.slug} />
-                    </Left>
-                </Columns>
-            </Container>
-        </Flex>
+const editPodcastStation = ({ slug }) => (
+  <Flex flex="1 1 auto" flexDirection="column">
+    <Flex py={5} flexDirection="column" alignItems="center" as="section">
+      <Container justifyContent="flex-start" flexDirection="column">
+        <SloganTitle>Podcast slug is: {slug}</SloganTitle>
+        <Columns>
+          <Right>
+            <EditPodcastForm slug={slug} />
+          </Right>
+          <Left>
+            <PodcastInfoBox slug={slug} />
+          </Left>
+        </Columns>
+      </Container>
     </Flex>
+  </Flex>
 );
 
 export default editPodcastStation;

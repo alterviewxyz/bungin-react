@@ -19,26 +19,20 @@ const ADD_PODCAST_FROM_URL_MUTATION = gql`
 `;
 
 class AddPodcastForm extends Component {
-  state = {
-    rss: '',
-  };
+  state = {};
   saveToState = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
   render() {
+    const { name } = this.state;
     return (
-      <Mutation
-        mutation={ADD_PODCAST_FROM_URL_MUTATION}
-        variables={this.state}
-      >
+      <Mutation mutation={ADD_PODCAST_FROM_URL_MUTATION} variables={this.state}>
         {(addpodcast, { error, loading }) => (
           <Form
             method="post"
             onSubmit={async e => {
               e.preventDefault();
               const res = await addpodcast();
-              this.setState({ rss: '' });
-              console.log(res);
               Router.push({
                 pathname: '/p/' + res.data.addPodcastFromURL.slug
               });
@@ -47,18 +41,17 @@ class AddPodcastForm extends Component {
             <fieldset disabled={loading} aria-busy={loading}>
               <h2>Add A Podcast To Bungin Database</h2>
               <Error error={error} />
-              
+
               <label htmlFor="name">
                 Name
                 <input
                   type="text"
                   name="rss"
                   placeholder="Put RSS URL here..."
-                  value={this.state.name}
+                  value={name}
                   onChange={this.saveToState}
                 />
               </label>
-             
 
               <button type="submit">Add Podcast!</button>
             </fieldset>

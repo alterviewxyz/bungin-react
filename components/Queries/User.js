@@ -1,3 +1,4 @@
+import React from 'react';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 import PropTypes from 'prop-types';
@@ -20,7 +21,7 @@ const User = props => (
 );
 
 User.propTypes = {
-  children: PropTypes.func.isRequired,
+  children: PropTypes.func.isRequired
 };
 
 export default User;

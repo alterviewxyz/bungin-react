@@ -7,7 +7,7 @@ const Stamp = styled.div`
     border: solid 0.1em #d00;
     border-radius: 0.2em;
     color: #d00;
-    content: "Pending!";
+    content: 'Pending!';
     font-size: 17px;
     font-weight: bold;
     line-height: 1;
