@@ -187,7 +187,7 @@ const SINGLE_PODCAST_STATION_QUERY = gql`
 
 class PodcastInfoBox extends Component {
   render() {
-    const { slug, id } = this.props;
+    const { slug } = this.props;
     return (
       <Query
         query={SINGLE_PODCAST_STATION_QUERY}
@@ -198,7 +198,7 @@ class PodcastInfoBox extends Component {
         {({ error, loading, data }) => {
           if (error) return <Error error={error} />;
           if (loading) return <p>Loading...</p>;
-          if (!data.podcastStation) return <p>No Podcast Found for {id}</p>;
+          if (!data.podcastStation) return <p>No Podcast Found for {slug}</p>;
           const item = data.podcastStation;
           return (
             <PodcastInfoBoxStyles>
