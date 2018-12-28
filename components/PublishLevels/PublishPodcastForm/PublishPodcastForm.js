@@ -27,14 +27,29 @@ const SINGLE_PODCAST_STATION_QUERY = gql`
   }
 `;
 
-
 const UPDATE_PODCAST_STATION = gql`
-  mutation UPDATE_PODCAST_STATION($id: ID!, $slug: String, $rss: String, $title: String, $description: String, $image: String, $language: String, $website: String) {
-    updatePodcastStation(id: $id, data:
-        {
-          slug: $slug, rss: $rss, title: $title, description: $description, image: $image, language: $language, website: $website
-        }
-      ) {
+  mutation UPDATE_PODCAST_STATION(
+    $id: ID!
+    $slug: String
+    $rss: String
+    $title: String
+    $description: String
+    $image: String
+    $language: String
+    $website: String
+  ) {
+    updatePodcastStation(
+      id: $id
+      data: {
+        slug: $slug
+        rss: $rss
+        title: $title
+        description: $description
+        image: $image
+        language: $language
+        website: $website
+      }
+    ) {
       id
       title
       description
@@ -44,9 +59,8 @@ const UPDATE_PODCAST_STATION = gql`
 `;
 
 class PublishPodcastForm extends Component {
-  state = {
-  };
-  
+  state = {};
+
   saveToState = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
@@ -58,13 +72,13 @@ class PublishPodcastForm extends Component {
     const res = await updatePodcastStationMutation({
       variables: {
         id: this.props.id,
-        data: this.state,
-      },
+        data: this.state
+      }
     });
     console.log('Updated!!');
     Router.push({
       pathname: '/publish/step2',
-      query: {id:this.props.id}
+      query: { id: this.props.id }
     });
   };
 
@@ -74,7 +88,8 @@ class PublishPodcastForm extends Component {
         query={SINGLE_PODCAST_STATION_QUERY}
         variables={{
           id: this.props.id
-        }}>
+        }}
+      >
         {({ error, loading, data }) => {
           if (error) return <Error error={error} />;
           if (loading) return <p>Loading...</p>;
@@ -82,106 +97,108 @@ class PublishPodcastForm extends Component {
             return <p>No Podcast Found for {this.props.id}</p>;
           const item = data.podcastStation;
           return (
-
             <Mutation mutation={UPDATE_PODCAST_STATION} variables={this.state}>
-            {(updatePodcastStation, { loading, error }) => (
-              <Form onSubmit={e => this.updatePodcastStation(e, updatePodcastStation)}>
-              <fieldset disabled={loading} aria-busy={loading}>
-                <h2>Edit and confirm podcasts before publishing them.</h2>
-                <Error error={error} />
-                
-                <label htmlFor="rss">
-                  RSS
-                  <input
-                    type="text"
-                    name="rss"
-                    placeholder="Put RSS URL here..."
-                    value={this.state.rss}
-                    onChange={this.saveToState}
-                    defaultValue={data.podcastStation.rss}
-                  />
-                </label>
+              {(updatePodcastStation, { loading, error }) => (
+                <Form
+                  onSubmit={e =>
+                    this.updatePodcastStation(e, updatePodcastStation)
+                  }
+                >
+                  <fieldset disabled={loading} aria-busy={loading}>
+                    <h2>Edit and confirm podcasts before publishing them.</h2>
+                    <Error error={error} />
 
-                <label htmlFor="slug">
-                  Slug
-                  <input
-                    type="text"
-                    name="slug"
-                    placeholder="Put slug here..."
-                    value={this.state.slug}
-                    onChange={this.saveToState}
-                    defaultValue={data.podcastStation.slug}
-                  />
-                </label>
+                    <label htmlFor="rss">
+                      RSS
+                      <input
+                        type="text"
+                        name="rss"
+                        placeholder="Put RSS URL here..."
+                        value={this.state.rss}
+                        onChange={this.saveToState}
+                        defaultValue={data.podcastStation.rss}
+                      />
+                    </label>
 
-                <label htmlFor="title">
-                  title
-                  <input
-                    type="text"
-                    name="title"
-                    placeholder="Put title here..."
-                    value={this.state.title}
-                    onChange={this.saveToState}
-                    defaultValue={data.podcastStation.title}
-                  />
-                </label>
+                    <label htmlFor="slug">
+                      Slug
+                      <input
+                        type="text"
+                        name="slug"
+                        placeholder="Put slug here..."
+                        value={this.state.slug}
+                        onChange={this.saveToState}
+                        defaultValue={data.podcastStation.slug}
+                      />
+                    </label>
 
-                <label htmlFor="language">
-                  language
-                  <input
-                    type="text"
-                    name="language"
-                    placeholder="Put language here..."
-                    value={this.state.language}
-                    onChange={this.saveToState}
-                    defaultValue={data.podcastStation.language}
-                  />
-                </label>
+                    <label htmlFor="title">
+                      title
+                      <input
+                        type="text"
+                        name="title"
+                        placeholder="Put title here..."
+                        value={this.state.title}
+                        onChange={this.saveToState}
+                        defaultValue={data.podcastStation.title}
+                      />
+                    </label>
 
+                    <label htmlFor="language">
+                      language
+                      <input
+                        type="text"
+                        name="language"
+                        placeholder="Put language here..."
+                        value={this.state.language}
+                        onChange={this.saveToState}
+                        defaultValue={data.podcastStation.language}
+                      />
+                    </label>
 
-                <label htmlFor="description">
-                  description
-                  <input
-                    type="text"
-                    name="description"
-                    placeholder="Put description here..."
-                    value={this.state.description}
-                    onChange={this.saveToState}
-                    defaultValue={data.podcastStation.description}
-                  />
-                </label>
+                    <label htmlFor="description">
+                      description
+                      <input
+                        type="text"
+                        name="description"
+                        placeholder="Put description here..."
+                        value={this.state.description}
+                        onChange={this.saveToState}
+                        defaultValue={data.podcastStation.description}
+                      />
+                    </label>
 
-                <label htmlFor="image">
-                  image
-                  <input
-                    type="text"
-                    name="image"
-                    placeholder="Put image here..."
-                    value={this.state.image}
-                    onChange={this.saveToState}
-                    defaultValue={data.podcastStation.image}
-                  />
-                </label>
+                    <label htmlFor="image">
+                      image
+                      <input
+                        type="text"
+                        name="image"
+                        placeholder="Put image here..."
+                        value={this.state.image}
+                        onChange={this.saveToState}
+                        defaultValue={data.podcastStation.image}
+                      />
+                    </label>
 
-                <label htmlFor="website">
-                  website
-                  <input
-                    type="text"
-                    name="website"
-                    placeholder="Put website here..."
-                    value={this.state.website}
-                    onChange={this.saveToState}
-                    defaultValue={data.podcastStation.website}
-                  />
-                </label>
+                    <label htmlFor="website">
+                      website
+                      <input
+                        type="text"
+                        name="website"
+                        placeholder="Put website here..."
+                        value={this.state.website}
+                        onChange={this.saveToState}
+                        defaultValue={data.podcastStation.website}
+                      />
+                    </label>
 
-                <button type="submit">Publish Podcast Episodes!</button>
-              </fieldset>
-            </Form>
-            )}
-          </Mutation>
-
-        )}}
+                    <button type="submit">Publish Podcast Episodes!</button>
+                  </fieldset>
+                </Form>
+              )}
+            </Mutation>
+          );
+        }}
       </Query>
     );
   }

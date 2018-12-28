@@ -1,19 +1,19 @@
-import React, { Component } from "react";
-import gql from "graphql-tag";
-import { Query } from "react-apollo";
-import styled from "styled-components";
-import Head from "next/head";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { Component } from 'react';
+import gql from 'graphql-tag';
+import { Query } from 'react-apollo';
+import styled from 'styled-components';
+import Head from 'next/head';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faEye,
   faHeart,
   faEnvelope,
   faShareAlt
-} from "@fortawesome/free-solid-svg-icons";
-import IconWrapper from "../elements/IconWrapper/IconWrapper";
-import Error from "../ErrorMessage";
-import PodcastInfoBoxHero from "./PodcastInfoBoxHero";
-import PodcastInfoBoxDescription from "./PodcastInfoBoxDescription";
+} from '@fortawesome/free-solid-svg-icons';
+import IconWrapper from '../elements/IconWrapper/IconWrapper';
+import Error from '../ErrorMessage';
+import PodcastInfoBoxHero from './PodcastInfoBoxHero';
+import PodcastInfoBoxDescription from './PodcastInfoBoxDescription';
 
 const PodcastInfoBoxStyles = styled.div`
   a {
@@ -69,11 +69,11 @@ const PodcastInfoBoxStyles = styled.div`
     font-size: 1em;
     font-family: FontAwesome;
     display: inline-block;
-    content: "\f005";
+    content: '\f005';
   }
 
   .rating > .half:before {
-    content: "\f089";
+    content: '\f089';
     position: absolute;
   }
 
@@ -123,7 +123,7 @@ const PodcastInfoBoxStyles = styled.div`
     width: 0;
     height: 0;
     border: 6px solid transparent;
-    content: "";
+    content: '';
   }
 
   a[data-tooltip]:hover::before,
@@ -133,12 +133,12 @@ const PodcastInfoBoxStyles = styled.div`
 
   /** positioning **/
   /* top tooltip */
-  a[data-tooltip][data-placement="top"]::before {
+  a[data-tooltip][data-placement='top']::before {
     bottom: 100%;
     left: 0;
     margin-bottom: 40px;
   }
-  a[data-tooltip][data-placement="top"]::after {
+  a[data-tooltip][data-placement='top']::after {
     border-top-color: #000;
     border-bottom: none;
     bottom: 50px;
@@ -156,32 +156,49 @@ const SINGLE_PODCAST_STATION_QUERY = gql`
       description
       image
       subscribed
-      episodesId
+      episodesId {
+        id
+        mp3
+        episodeNubmer
+        title
+        description
+        image
+        tag
+        rating
+        publishDate
+        duration
+      }
       latestEpisode
-      category
+      category {
+        id
+      }
       tag
-      copyright
+      copyright {
+        id
+      }
       rating
       website
-      author
+      author {
+        id
+      }
     }
   }
 `;
 
 class PodcastInfoBox extends Component {
   render() {
+    const { slug, id } = this.props;
     return (
       <Query
         query={SINGLE_PODCAST_STATION_QUERY}
         variables={{
-          slug: this.props.slug
+          slug
         }}
       >
         {({ error, loading, data }) => {
           if (error) return <Error error={error} />;
           if (loading) return <p>Loading...</p>;
-          if (!data.podcastStation)
-            return <p>No Podcast Found for {this.props.id}</p>;
+          if (!data.podcastStation) return <p>No Podcast Found for {id}</p>;
           const item = data.podcastStation;
           return (
             <PodcastInfoBoxStyles>
@@ -190,14 +207,14 @@ class PodcastInfoBox extends Component {
               </Head>
               <div className="movie-card">
                 <div className="container">
-                  <a href="#">
+                  <a>
                     <img src={item.image} alt={item.title} className="cover" />
                   </a>
-                    <PodcastInfoBoxHero
-                      title={item.title}
-                      subTitle={item.description}
-                      pending={item.pending}
-                    />
+                  <PodcastInfoBoxHero
+                    title={item.title}
+                    subTitle={item.description}
+                    pending={item.pending}
+                  />
                   <PodcastInfoBoxDescription description={item.description} />
                 </div>
               </div>
