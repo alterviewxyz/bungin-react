@@ -6,7 +6,8 @@ Bungin React Client is a website that helps you discover Persian Podcasts and su
 
 [https://alterview.xyz](https://alterview.xyz)
 
-[![Build Status](https://travis-ci.org/alterviewxyz/bungin-react.svg?branch=develop)](https://travis-ci.org/alterviewxyz/bungin-react)
+![Latest Commits](https://img.shields.io/github/last-commit/alterviewxyz/bungin-react.svg)
+[![Build Status](https://api.travis-ci.com/alterviewxyz/bungin-react.svg?branch=master)](https://travis-ci.org/alterviewxyz/bungin-react)
 [![Contributions](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](https://github.com/alterviewxyz/bungin-react/#contributing)
 [![GitHub license](https://img.shields.io/github/license/alterviewxyz/bungin-react.svg)](https://github.com/alterviewxyz/bungin-react/blob/develop/LICENSE)
 [![Twitter](https://img.shields.io/twitter/follow/alterviewxyz.svg?label=Follow&style=social?style=plastic)](https://twitter.com/alterview.xyz)
