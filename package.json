@@ -10,7 +10,8 @@
     "start": "next start",
     "test": "NODE_ENV=test jest --watch",
     "test-win": "SET NODE_ENV=test&& jest --watch",
-    "heroku-postbuild": "next build"
+    "heroku-postbuild": "next build",
+    "lint": "eslint ."
   },
   "author": "",
   "license": "ISC",
