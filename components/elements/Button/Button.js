@@ -28,24 +28,21 @@ const Button = styled.button`
     transform: scale(1.01, 1.01) translateY(-2px) translateZ(0);
   }
 
-  ${({ big }) =>
-    big &&
-    css`
+  ${({ big }) => big
+    && css`
       padding: 11px 24px;
     `}
 
 
 
-    ${({ responsive }) =>
-      responsive &&
-      media.lessThan('medium')`
+    ${({ responsive }) => responsive
+      && media.lessThan('medium')`
         padding: 6px 16px;
       `}
 
-    ${({ big, responsive }) =>
-      big &&
-      responsive &&
-      media.lessThan('medium')`
+    ${({ big, responsive }) => big
+      && responsive
+      && media.lessThan('medium')`
         padding: 9px 20px;
       `}
 

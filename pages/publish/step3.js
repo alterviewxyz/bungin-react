@@ -21,7 +21,7 @@ const Add_Podcast = (props) => (
                 <PleaseSignIn>
                     <SloganTitle>Finally! The podcast is here! If everything is alright you can now navigate to podcast page at 
                     <Link as={`/p/` + props.query.slug} href={`/singlePodcastStation?slug=` + props.query.slug}>
-                        <a>it's page.</a>
+                        <a> it's page.</a>
                     </Link>
                     </SloganTitle>
                 </PleaseSignIn>

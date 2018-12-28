@@ -103,7 +103,7 @@ export const Link = styled.a`
     'small',
     css`
       font-size: 13px;
-    `
+    `,
   )};
 
   :hover,
@@ -111,10 +111,10 @@ export const Link = styled.a`
     text-decoration: none;
     color: #42a5f5;
     transform: ${ifProp(
-      'secondary',
-      'translateZ(0)',
-      'scaleX(1.01) translateX(-4px)'
-    )};
+    'secondary',
+    'translateZ(0)',
+    'scaleX(1.01) translateX(-4px)',
+  )};
   }
 `;
 
