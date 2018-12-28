@@ -1,16 +1,37 @@
-# Bungin React Client
+<h1 align="center">
+  Bungin React Client 💻
+</h1>
+<p align="center">
+  <strong>
+     Bungin React Is A Client For Bungin; A Social Media For Podcasts. 
+  </strong>
+<p align="center">
+  For GraphQL server side see: <a href="https://github.com/alterviewxyz/bungin-server">Bungin Server</a>
+</p>
+<p align="center">
+  <a href="https://alterview.xyz">
+    🎙Alterview.xyz🎙
+  </a>
+</p>
 
-Bungin React Client is a website that helps you discover Persian Podcasts and subscribe to them.
+<p align="center">
+  <a href="https://github.com/alterviewxyz/bungin-react">
+    <img src="https://img.shields.io/github/last-commit/alterviewxyz/bungin-react.svg" alt="Latest Commits" />
+  </a>
+  <a href="https://travis-ci.com/alterviewxyz/bungin-react">
+    <img src="https://api.travis-ci.com/alterviewxyz/bungin-react.svg?branch=master" alt="Current build status." />
+  </a>
+  <a href="https://github.com/alterviewxyz/bungin-react/#contributing">
+    <img src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg" alt="Contributions" />
+  </a>
+  <a href="https://github.com/alterviewxyz/bungin-react/blob/develop/LICENSE">
+    <img src="https://img.shields.io/github/license/alterviewxyz/bungin-react.svg" alt="License" />
+  </a>
+  <a href="https://twitter.com/alterviewxyz">
+    <img src="https://img.shields.io/twitter/follow/alterviewxyz.svg?label=Follow&style=social?style=plastic" alt="Twitter" />
+  </a>
+</p>
 
-*For GraphQL server side see: [Bungin-Server](https://github.com/alterviewxyz/bungin-server)*
-
-[https://alterview.xyz](https://alterview.xyz)
-
-![Latest Commits](https://img.shields.io/github/last-commit/alterviewxyz/bungin-react.svg)
-[![Build Status](https://api.travis-ci.com/alterviewxyz/bungin-react.svg?branch=master)](https://travis-ci.com/alterviewxyz/bungin-react)
-[![Contributions](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](https://github.com/alterviewxyz/bungin-react/#contributing)
-[![GitHub license](https://img.shields.io/github/license/alterviewxyz/bungin-react.svg)](https://github.com/alterviewxyz/bungin-react/blob/develop/LICENSE)
-[![Twitter](https://img.shields.io/twitter/follow/alterviewxyz.svg?label=Follow&style=social?style=plastic)](https://twitter.com/alterviewxyz)
 
 ## Table of Contents
 * [Key Features](#key-features)
