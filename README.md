@@ -1,4 +1,4 @@
-# tgdr.io
+# Bungin React Client
 
 Bungin React Client is a website that helps you discover Persian Podcasts and subscribe to them.
 
