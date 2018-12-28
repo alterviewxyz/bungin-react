@@ -3,7 +3,7 @@ import { Box } from '@rebass/grid';
 import { ifProp } from 'styled-tools';
 import media from 'styled-media-query';
 
-const CustomHr = styled.hr<{ onlyMobile?: boolean }>`
+const CustomHr = styled.hr>`
   width: 100%;
   height: 1px;
   display: ${ifProp('onlyMobile', 'none', 'block')};
