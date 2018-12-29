@@ -29,7 +29,8 @@ const SINGLE_PODCAST_STATION_QUERY = gql`
       pending
       description
       image
-      subscribed
+      # subscribers {
+      # }
       episodesId {
         id
         mp3
@@ -37,20 +38,26 @@ const SINGLE_PODCAST_STATION_QUERY = gql`
         title
         description
         image
-        tag
-        rating
-        publishDate
+        tag {
+          id
+          title
+        }
+        upvotes
+        downvotes
         duration
       }
       latestEpisode
       category {
         id
       }
-      tag
+      tag {
+        id
+        title
+      }
       copyright {
         id
       }
-      rating
+      downvotes
       website
       author {
         id
@@ -171,8 +178,10 @@ const UPDATE_PODCAST_STATION = gql`
     $slug: String
     $rss: String
     $title: String
+    $subtitle: String
     $description: String
     $image: String
+    $largeimage: String
     $language: String
     $website: String
   ) {
@@ -182,8 +191,10 @@ const UPDATE_PODCAST_STATION = gql`
         slug: $slug
         rss: $rss
         title: $title
+        subtitle: $subtitle
         description: $description
         image: $image
+        largeImage: $largeimage
         language: $language
         website: $website
       }

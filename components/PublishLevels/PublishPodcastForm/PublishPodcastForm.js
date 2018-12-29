@@ -37,15 +37,39 @@ class PublishPodcastForm extends Component {
     });
   };
 
+  uploadFile = async e => {
+    const files = e.target.files;
+    const name = e.target.name;
+    const data = new FormData();
+    data.append('file', files[0]);
+    data.append('upload_preset', 'sickfits');
+
+    const res = await fetch(
+      'https://api.cloudinary.com/v1_1/pushup/image/upload',
+      {
+        method: 'POST',
+        body: data
+      }
+    );
+    const file = await res.json();
+    this.setState({
+      [name]: file.secure_url
+    });
+    console.log(file.secure_url);
+  };
+
   render() {
     const { id } = this.props;
+    console.log('id', id);
     const {
       rss,
       slug,
       title,
+      subtitle,
       language,
       description,
       image,
+      largeimage,
       website
     } = this.state;
     return (
@@ -108,6 +132,18 @@ class PublishPodcastForm extends Component {
                       />
                     </label>
 
+                    <label htmlFor="title">
+                      sub title
+                      <input
+                        type="text"
+                        name="subtitle"
+                        placeholder="Put subtitle here..."
+                        value={subtitle}
+                        onChange={this.saveToState}
+                        defaultValue={data.podcastStation.subtitle}
+                      />
+                    </label>
+
                     <label htmlFor="language">
                       language
                       <input
@@ -135,12 +171,50 @@ class PublishPodcastForm extends Component {
                     <label htmlFor="image">
                       image
                       <input
+                        type="file"
+                        id="file"
+                        name="image"
+                        placeholder="Upload an image"
+                        required
+                        onChange={this.uploadFile}
+                      />
+                      <input
                         type="text"
                         name="image"
                         placeholder="Put image here..."
                         value={image}
                         onChange={this.saveToState}
                         defaultValue={data.podcastStation.image}
+                      />
+                      <img
+                        src={image || data.podcastStation.image}
+                        alt=""
+                        style={{ height: '150px', margin: '15px' }}
+                      />
+                    </label>
+
+                    <label htmlFor="image">
+                      large image
+                      <input
+                        type="file"
+                        id="file"
+                        name="largeimage"
+                        placeholder="Upload an image"
+                        required
+                        onChange={this.uploadFile}
+                      />
+                      <input
+                        type="text"
+                        name="largeimage"
+                        placeholder="Put largeimage here..."
+                        value={largeimage}
+                        onChange={this.saveToState}
+                        defaultValue={data.podcastStation.largeimage}
+                      />
+                      <img
+                        src={largeimage || data.podcastStation.largeimage}
+                        alt=""
+                        style={{ height: '150px', margin: '15px' }}
                       />
                     </label>
 
