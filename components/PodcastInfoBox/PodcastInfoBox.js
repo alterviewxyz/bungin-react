@@ -216,8 +216,9 @@ class PodcastInfoBox extends Component {
                     subTitle={item.description}
                     pending={item.pending}
                   />
-                  <PodcastInfoBoxDescription description={item.description} />
-                  <PodcastInfoBoxEpisodeCards episodes={item.episodesId} />
+                  <PodcastInfoBoxDescription description={item.description}>
+                    <PodcastInfoBoxEpisodeCards episodes={item.episodesId} />
+                  </PodcastInfoBoxDescription>
                 </div>
               </div>
             </PodcastInfoBoxStyles>

@@ -1,1 +1,1 @@
-export { default } from './PodcastInfoBoxEpisodeCard';
+export { default } from './PodcastInfoBoxEpisodeCards';
