@@ -159,6 +159,22 @@ const EpisodeStyles = styled.div`
   .bright_back {
     background: url(${props => props.img});
   }
+
+  .number-badge {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    background-color: white;
+    width: 45px;
+    height: 45px;
+    padding: 10px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.27);
+    z-index: 1;
+  }
 `;
 
 class EpisodeCard extends Component {
@@ -172,11 +188,12 @@ class EpisodeCard extends Component {
       podcastTitle,
       duration,
       date,
-      episode
+      episodeNubmer
     } = this.props;
     return (
       <EpisodeStyles img={image} className="episode-card">
         <div className="info_section">
+          <span className="number-badge">{episodeNubmer}</span>
           <div className="episode_header">
             <img
               className="locandina"

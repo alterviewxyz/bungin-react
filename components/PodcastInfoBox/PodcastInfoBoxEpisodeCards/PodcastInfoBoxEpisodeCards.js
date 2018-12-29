@@ -6,17 +6,20 @@ const EpisodeCards = styled.div``;
 
 const PodcastInfoBoxEpisodeCards = ({ episodes }) => (
   <EpisodeCards>
-    <EpisodeCard
-      id={episodes[0].id}
-      slug={episodes[0].slug}
-      title={episodes[0].title}
-      description={episodes[0].description}
-      image={episodes[0].image}
-      podcastTitle={episodes[0].podcastTitle}
-      duration={episodes[0].duration}
-      date={episodes[0].date}
-      episode={episodes[0].episode}
-    />
+    {episodes.map(episode => (
+      <EpisodeCard
+        key={episode.id}
+        id={episode.id}
+        slug={episode.slug}
+        title={episode.title}
+        description={episode.description}
+        image={episode.image}
+        podcastTitle={episode.podcastTitle}
+        duration={episode.duration}
+        date={episode.date}
+        episodeNubmer={episode.episodeNubmer}
+      />
+    ))}
   </EpisodeCards>
 );
 export default PodcastInfoBoxEpisodeCards;
