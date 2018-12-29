@@ -38,6 +38,7 @@ const PodcastInfoBoxStyles = styled.div`
     font: 14px/22px sans-serif;
     color: #a9a8a3;
     padding: 40px 0;
+    display: flex;
   }
 
   .container {
