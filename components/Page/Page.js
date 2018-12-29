@@ -37,7 +37,8 @@ injectGlobal`
     font-size: 10px;
   }
   *, *:before, *:after {
-    box-sizing: inherit;
+    box-sizing: border-box;
+    margin: 0;
   }
   body {
     padding: 0;
