@@ -10,8 +10,8 @@ import {
   faEnvelope,
   faShareAlt
 } from '@fortawesome/free-solid-svg-icons';
-import IconWrapper from '../elements/IconWrapper/IconWrapper';
-import Error from '../ErrorMessage';
+import IconWrapper from '../../../elements/IconWrapper/IconWrapper';
+import Error from '../../../ErrorMessage';
 
 // принимает строку и лимит после скольки знаков искать пробел и обрезать
 function getExcerpt(str = '', limit) {

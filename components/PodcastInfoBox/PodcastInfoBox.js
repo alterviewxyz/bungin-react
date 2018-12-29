@@ -14,6 +14,7 @@ import IconWrapper from '../elements/IconWrapper/IconWrapper';
 import Error from '../ErrorMessage';
 import PodcastInfoBoxHero from './PodcastInfoBoxHero';
 import PodcastInfoBoxDescription from './PodcastInfoBoxDescription';
+import PodcastInfoBoxEpisodeCards from './PodcastInfoBoxEpisodeCards';
 
 const PodcastInfoBoxStyles = styled.div`
   a {
@@ -216,6 +217,7 @@ class PodcastInfoBox extends Component {
                     pending={item.pending}
                   />
                   <PodcastInfoBoxDescription description={item.description} />
+                  <PodcastInfoBoxEpisodeCards episodes={item.episodesId} />
                 </div>
               </div>
             </PodcastInfoBoxStyles>

@@ -7,7 +7,7 @@ import { Flex } from '@rebass/grid';
 import styled from 'styled-components';
 import { Line } from 'rc-progress';
 import Form from '../../styles/Form';
-import PodcastEpisodeCard from '../../PodcastEpisodeCard';
+import PodcastEpisodeCard from './PodcastEpisodeCard';
 import Error from '../../ErrorMessage';
 import { CURRENT_USER_QUERY } from '../../Queries/User';
 
