@@ -2,8 +2,8 @@ import * as React from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
 import { Flex } from '@rebass/grid';
-import { Container } from '../elements/Layout';
-import Logo from '../elements/Logo';
+import { Container } from '../../elements/Layout';
+import Logo from '../../elements/Logo';
 import HeaderMenu from './HeaderMenu';
 
 const HeaderWrapper = styled(Flex).attrs({

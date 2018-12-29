@@ -4,7 +4,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 
 // import Header from '../Header';
 // import Slogan from '../Slogan';
-import { Container } from '../elements/Layout';
+import { Container } from '../../elements/Layout';
 // import Sidebar from '../Sidebar';
 import Footer from '../Footer';
 

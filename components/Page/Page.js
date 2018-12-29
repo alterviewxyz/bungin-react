@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import styled, { ThemeProvider, injectGlobal } from 'styled-components';
-import Body from '../Body';
-import Header from '../Header';
-import Meta from '../Meta';
+import Body from './Body';
+import Header from './Header';
+import Meta from './Meta';
 
 const theme = {
   red: '#FF0000',

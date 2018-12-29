@@ -10,10 +10,10 @@ import {
   faTwitter,
   faGithub
 } from '@fortawesome/free-brands-svg-icons';
-import { Container } from '../elements/Layout';
-import Logo from '../elements/Logo';
-import { FooterLink } from '../elements/Typography';
-import IconWrapper from '../elements/IconWrapper/IconWrapper';
+import { Container } from '../../elements/Layout';
+import Logo from '../../elements/Logo';
+import { FooterLink } from '../../elements/Typography';
+import IconWrapper from '../../elements/IconWrapper/IconWrapper';
 
 const List = styled(Flex).attrs({
   alignItems: 'center',

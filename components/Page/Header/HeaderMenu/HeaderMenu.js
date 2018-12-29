@@ -3,9 +3,9 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import { Box, Flex } from '@rebass/grid';
 import media from 'styled-media-query';
-import User from '../../Queries/User';
-import Button from '../../elements/Button';
-import Signout from '../../Signout';
+import User from '../../../Queries/User';
+import Button from '../../../elements/Button';
+import Signout from '../../../Signout';
 
 const Name = styled.span`
   padding-right: 16px;
