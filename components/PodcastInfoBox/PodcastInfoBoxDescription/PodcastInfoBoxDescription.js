@@ -55,7 +55,7 @@ const DescriptionStyles = styled.div`
   }
 `;
 
-const PodcastInfoBoxDescription = props => (
+const PodcastInfoBoxDescription = ({ description, children }) => (
   <DescriptionStyles>
     <div className="column1">
       <span className="tag">action</span> <span className="tag">fantasy</span>
@@ -65,12 +65,12 @@ const PodcastInfoBoxDescription = props => (
       <p>
         {
           // eslint-disable-next-line react/destructuring-assignment
-          props.description
+          description
         }
         {/* <a href="#">read more</a> */}
       </p>
 
-      <div className="avatars">
+      {/* <div className="avatars">
         <a href="#" data-tooltip="Person 1" data-placement="top">
           <img
             src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/hobbit_avatar1.png"
@@ -91,7 +91,9 @@ const PodcastInfoBoxDescription = props => (
             alt="avatar3"
           />
         </a>
-      </div>
+      </div> */}
+
+      {children}
     </div>
   </DescriptionStyles>
 );
