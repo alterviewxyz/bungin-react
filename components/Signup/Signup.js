@@ -5,21 +5,7 @@ import { Flex } from '@rebass/grid';
 import styled from 'styled-components';
 import Form from '../styles/Form';
 import Error from '../ErrorMessage';
-import { CURRENT_USER_QUERY } from '../Queries/User';
-
-const SIGNUP_MUTATION = gql`
-  mutation SIGNUP_MUTATION(
-    $email: String!
-    $name: String!
-    $password: String!
-  ) {
-    signup(email: $email, name: $name, password: $password) {
-      id
-      email
-      name
-    }
-  }
-`;
+import { CURRENT_USER_QUERY, SIGNUP_MUTATION } from '../Queries/Queries';
 
 class Signup extends Component {
   state = {

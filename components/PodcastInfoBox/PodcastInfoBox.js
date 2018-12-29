@@ -15,6 +15,7 @@ import Error from '../ErrorMessage';
 import PodcastInfoBoxHero from './PodcastInfoBoxHero';
 import PodcastInfoBoxDescription from './PodcastInfoBoxDescription';
 import PodcastInfoBoxEpisodeCards from './PodcastInfoBoxEpisodeCards';
+import { SINGLE_PODCAST_STATION_QUERY } from '../Queries/Queries';
 
 const PodcastInfoBoxStyles = styled.div`
   a {
@@ -146,44 +147,6 @@ const PodcastInfoBoxStyles = styled.div`
     bottom: 50px;
     left: 20px;
     margin-bottom: 4px;
-  }
-`;
-
-const SINGLE_PODCAST_STATION_QUERY = gql`
-  query SINGLE_PODCAST_STATION_QUERY($slug: String!) {
-    podcastStation(where: { slug: $slug }) {
-      id
-      title
-      pending
-      description
-      image
-      subscribed
-      episodesId {
-        id
-        mp3
-        episodeNubmer
-        title
-        description
-        image
-        tag
-        rating
-        publishDate
-        duration
-      }
-      latestEpisode
-      category {
-        id
-      }
-      tag
-      copyright {
-        id
-      }
-      rating
-      website
-      author {
-        id
-      }
-    }
   }
 `;
 

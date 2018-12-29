@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import gql from 'graphql-tag';
-import { Query } from 'react-apollo';
 import styled from 'styled-components';
-import Head from 'next/head';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faEye,
@@ -11,7 +8,6 @@ import {
   faShareAlt
 } from '@fortawesome/free-solid-svg-icons';
 import IconWrapper from '../../../elements/IconWrapper/IconWrapper';
-import Error from '../../../ErrorMessage';
 
 // принимает строку и лимит после скольки знаков искать пробел и обрезать
 function getExcerpt(str = '', limit) {
@@ -153,18 +149,6 @@ const EpisodeBoxStyles = styled.div`
     background-position: 0 -84px;
     width: 18px;
     height: 18px;
-  }
-`;
-
-const SINGLE_PODCAST_STATION_QUERY = gql`
-  query SINGLE_PODCAST_STATION_QUERY($slug: String!) {
-    podcastStation(where: { slug: $slug }) {
-      id
-      title
-      pending
-      description
-      image
-    }
   }
 `;
 

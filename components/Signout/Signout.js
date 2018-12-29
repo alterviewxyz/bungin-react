@@ -5,15 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import Button from '../elements/Button';
 import IconWrapper from '../elements/IconWrapper/IconWrapper';
-import { CURRENT_USER_QUERY } from '../Queries/User';
-
-const SIGN_OUT_MUTATION = gql`
-  mutation SIGN_OUT_MUTATION {
-    signout {
-      message
-    }
-  }
-`;
+import { CURRENT_USER_QUERY, SIGN_OUT_MUTATION } from '../Queries/Queries';
 
 const Signout = props => (
   <Mutation

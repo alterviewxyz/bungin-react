@@ -6,17 +6,7 @@ import { Flex } from '@rebass/grid';
 import styled from 'styled-components';
 import Form from '../styles/Form';
 import Error from '../ErrorMessage';
-import { CURRENT_USER_QUERY } from '../Queries/User';
-
-const ADD_PODCAST_FROM_URL_MUTATION = gql`
-  mutation ADD_PODCAST_FROM_URL_MUTATION($rss: String!) {
-    addPodcastFromURL(rss: $rss) {
-      id
-      slug
-      rss
-    }
-  }
-`;
+import { ADD_PODCAST_FROM_URL_MUTATION } from '../Queries/Queries';
 
 class EditPodcastForm extends Component {
   saveToState = e => {

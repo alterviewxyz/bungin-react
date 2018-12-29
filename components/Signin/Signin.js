@@ -7,23 +7,13 @@ import { Flex } from '@rebass/grid';
 import styled from 'styled-components';
 import Form from '../styles/Form';
 import Error from '../ErrorMessage';
-import { CURRENT_USER_QUERY } from '../Queries/User';
+import { CURRENT_USER_QUERY, SIGNIN_MUTATION } from '../Queries/Queries';
 
 const InputWrapper = styled(Flex)`
   position: relative;
 `;
 
 const Input = styled.input``;
-
-const SIGNIN_MUTATION = gql`
-  mutation SIGNIN_MUTATION($email: String!, $password: String!) {
-    signin(email: $email, password: $password) {
-      id
-      email
-      name
-    }
-  }
-`;
 
 class Signin extends Component {
   state = {

@@ -6,27 +6,7 @@ import styled from 'styled-components';
 import { Container } from '../../elements/Layout';
 import PleaseSignIn from '../../PleaseSignIn';
 import PodcastCard from './PodcastCard';
-
-const ALL_PODCAST_STATIONS_QUERY = gql`
-  query ALL_PODCAST_STATIONS_QUERY(
-    $skip: Int = 0
-    $first: Int = 10
-    $pending: Boolean = true
-  ) {
-    podcastStations(
-      first: $first
-      skip: $skip
-      orderBy: createdAt_DESC
-      where: { pending: $pending }
-    ) {
-      id
-      slug
-      title
-      description
-      image
-    }
-  }
-`;
+import { ALL_PODCAST_STATIONS_QUERY } from '../../Queries/Queries';
 
 const ItemsList = styled.div`
   display: grid;

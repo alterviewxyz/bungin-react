@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/accessible-emoji */
 import React, { Component } from 'react';
 import gql from 'graphql-tag';
 import styled from 'styled-components';

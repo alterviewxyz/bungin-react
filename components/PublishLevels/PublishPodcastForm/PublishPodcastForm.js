@@ -7,57 +7,10 @@ import { Flex } from '@rebass/grid';
 import styled from 'styled-components';
 import Form from '../../styles/Form';
 import Error from '../../ErrorMessage';
-import { CURRENT_USER_QUERY } from '../../Queries/User';
-
-const SINGLE_PODCAST_STATION_QUERY = gql`
-  query SINGLE_PODCAST_STATION_QUERY($id: ID!) {
-    podcastStation(where: { id: $id }) {
-      id
-      slug
-      rss
-      title
-      description
-      image
-      language
-      website
-      unProcessedFeed
-      episodesId {
-        id
-      }
-    }
-  }
-`;
-
-const UPDATE_PODCAST_STATION = gql`
-  mutation UPDATE_PODCAST_STATION(
-    $id: ID!
-    $slug: String
-    $rss: String
-    $title: String
-    $description: String
-    $image: String
-    $language: String
-    $website: String
-  ) {
-    updatePodcastStation(
-      id: $id
-      data: {
-        slug: $slug
-        rss: $rss
-        title: $title
-        description: $description
-        image: $image
-        language: $language
-        website: $website
-      }
-    ) {
-      id
-      title
-      description
-      slug
-    }
-  }
-`;
+import {
+  SINGLE_PODCAST_STATION_WITH_EPISODES_ID_QUERY,
+  UPDATE_PODCAST_STATION
+} from '../../Queries/Queries';
 
 class PublishPodcastForm extends Component {
   state = {};
@@ -97,7 +50,7 @@ class PublishPodcastForm extends Component {
     } = this.state;
     return (
       <Query
-        query={SINGLE_PODCAST_STATION_QUERY}
+        query={SINGLE_PODCAST_STATION_WITH_EPISODES_ID_QUERY}
         variables={{
           id: id
         }}

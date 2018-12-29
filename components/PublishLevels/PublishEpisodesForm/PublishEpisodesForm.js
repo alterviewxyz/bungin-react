@@ -9,7 +9,10 @@ import { Line } from 'rc-progress';
 import Form from '../../styles/Form';
 import PodcastEpisodeCard from './PodcastEpisodeCard';
 import Error from '../../ErrorMessage';
-import { CURRENT_USER_QUERY } from '../../Queries/User';
+import {
+  CREATE_PODCAST_EPISODE,
+  SINGLE_PODCAST_STATION_WITH_EPISODES_ID_QUERY
+} from '../../Queries/Queries';
 
 const Contain = styled.div`
   display: grid;
@@ -18,59 +21,6 @@ const Contain = styled.div`
     'menu main main main right right'
     'menu footer footer footer footer footer';
   grid-gap: 20px;
-`;
-
-const SINGLE_PODCAST_STATION_QUERY = gql`
-  query SINGLE_PODCAST_STATION_QUERY($id: ID!) {
-    podcastStation(where: { id: $id }) {
-      id
-      slug
-      rss
-      title
-      description
-      image
-      language
-      website
-      unProcessedFeed
-      episodesId {
-        id
-      }
-    }
-  }
-`;
-
-const CREATE_PODCAST_EPISODE = gql`
-  mutation CREATE_PODCAST_EPISODE(
-    $mp3: String!
-    $title: String!
-    $description: String!
-    $image: String
-    $episodeNubmer: Int!
-    $publishDate: DateTime!
-    $duration: Int!
-    $podcastStation: String!
-  ) {
-    createPodcastEpisode(
-      data: {
-        mp3: $mp3
-        title: $title
-        description: $description
-        episodeNubmer: $episodeNubmer
-        image: $image
-        publishDate: $publishDate
-        duration: $duration
-      }
-      podcastStation: $podcastStation
-    ) {
-      id
-      title
-      mp3
-      description
-      episodeNubmer
-      publishDate
-      duration
-    }
-  }
 `;
 
 class PublishEpisodesForm extends Component {
@@ -146,7 +96,7 @@ class PublishEpisodesForm extends Component {
     } = this.state;
     return (
       <Query
-        query={SINGLE_PODCAST_STATION_QUERY}
+        query={SINGLE_PODCAST_STATION_WITH_EPISODES_ID_QUERY}
         variables={{
           id
         }}
