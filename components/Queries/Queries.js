@@ -122,7 +122,7 @@ const CREATE_PODCAST_EPISODE = gql`
 `;
 
 const SINGLE_PODCAST_STATION_WITH_EPISODES_ID_QUERY = gql`
-  query SINGLE_PODCAST_STATION_QUERY($id: ID!) {
+  query SINGLE_PODCAST_STATION_WITH_EPISODES_ID_QUERY($id: ID!) {
     podcastStation(where: { id: $id }) {
       id
       slug

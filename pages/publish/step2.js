@@ -12,14 +12,14 @@ const Columns = styled.div`
   grid-gap: 20px;
 `;
 
-const Add_Podcast = ({ id }) => (
+const Add_Podcast = ({ query }) => (
   <Flex flex="1 1 auto" flexDirection="column">
     <Flex py={5} flexDirection="column" alignItems="center" as="section">
       <Container justifyContent="flex-start" flexDirection="column">
         <PleaseSignIn>
           <SloganTitle>Help Us Grow Our Diversity.</SloganTitle>
           <Columns>
-            <PublishEpisodesForm id={id} />
+            <PublishEpisodesForm id={query.id} />
           </Columns>
         </PleaseSignIn>
       </Container>
