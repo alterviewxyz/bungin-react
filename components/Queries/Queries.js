@@ -91,7 +91,9 @@ const CREATE_PODCAST_EPISODE = gql`
   mutation CREATE_PODCAST_EPISODE(
     $mp3: String!
     $title: String!
+    $subtitle: String
     $description: String!
+    $text: String
     $image: String
     $episodeNubmer: Int!
     $publishDate: DateTime!
@@ -102,8 +104,10 @@ const CREATE_PODCAST_EPISODE = gql`
       data: {
         mp3: $mp3
         title: $title
+        subtitle: $subtitle
         description: $description
         episodeNubmer: $episodeNubmer
+        text: $text
         image: $image
         publishDate: $publishDate
         duration: $duration
@@ -112,9 +116,11 @@ const CREATE_PODCAST_EPISODE = gql`
     ) {
       id
       title
+      subtitle
       mp3
       description
       episodeNubmer
+      text
       publishDate
       duration
     }

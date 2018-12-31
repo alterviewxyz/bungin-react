@@ -35,8 +35,10 @@ class PublishEpisodesForm extends Component {
       mp3,
       nubmer,
       title,
+      subtitle,
       description,
       image,
+      text,
       publishDate,
       duration,
       nextToGo,
@@ -51,8 +53,10 @@ class PublishEpisodesForm extends Component {
         mp3: mp3,
         episodeNubmer: parseInt(nubmer),
         title: title,
+        subtitle: subtitle,
         description: description,
         image: image,
+        text: text,
         publishDate: publishDate,
         duration: parseInt(duration),
         podcastStation: id
@@ -69,7 +73,7 @@ class PublishEpisodesForm extends Component {
     this.setState({
       nextToGo: nextToGo - 1,
       mp3: episodes[nextToGo - 1].enclosure.url,
-      nubmer: episodes[nextToGo - 1].episode,
+      nubmer: episodes[nextToGo - 1].episode || nubmer + 1,
       title: episodes[nextToGo - 1].title,
       description: episodes[nextToGo - 1].description,
       image: episodes[nextToGo - 1].image,
@@ -85,8 +89,10 @@ class PublishEpisodesForm extends Component {
       mp3,
       nubmer,
       title,
+      subtitle,
       description,
       image,
+      text,
       publishDate,
       duration,
       nextToGo,
@@ -110,7 +116,6 @@ class PublishEpisodesForm extends Component {
           const podcastSlug = data.podcastStation.slug;
           //ُThis isn't the right what but I couldn't find any better way still
           const the_length = episodes.length - 1;
-          console.log('episodes.length', the_length);
           this.setState(prevState => {
             if (prevState.length === episodes.length) return null;
             return {
@@ -118,7 +123,7 @@ class PublishEpisodesForm extends Component {
               episodes: episodes,
               nextToGo: the_length,
               mp3: episodes[the_length].enclosure.url,
-              nubmer: episodes[the_length].episode,
+              nubmer: episodes[the_length].episode || 1,
               title: episodes[the_length].title,
               description: episodes[the_length].description,
               image: episodes[the_length].image,
@@ -147,8 +152,9 @@ class PublishEpisodesForm extends Component {
                       <button type="submit">
                         Publish Episode {nubmer} of {length}!
                       </button>
+
                       <label htmlFor="title">
-                        RSS
+                        Title
                         <input
                           type="text"
                           name="title"
@@ -158,13 +164,13 @@ class PublishEpisodesForm extends Component {
                         />
                       </label>
 
-                      <label htmlFor="description">
-                        description
+                      <label htmlFor="subtitle">
+                        SubTitle
                         <input
                           type="text"
-                          name="description"
-                          placeholder="Put description here..."
-                          value={description}
+                          name="subtitle"
+                          placeholder="Put subtitle here..."
+                          value={subtitle}
                           onChange={this.saveToState}
                         />
                       </label>
@@ -199,6 +205,19 @@ class PublishEpisodesForm extends Component {
                           placeholder="Put description here..."
                           value={description}
                           onChange={this.saveToState}
+                          style={{ display: 'block', height: '200px' }}
+                        />
+                      </label>
+
+                      <label htmlFor="text">
+                        text
+                        <textarea
+                          type="text"
+                          name="text"
+                          placeholder="Put text here..."
+                          value={text}
+                          onChange={this.saveToState}
+                          style={{ display: 'block', height: '200px' }}
                         />
                       </label>
 
@@ -216,7 +235,7 @@ class PublishEpisodesForm extends Component {
                       <label htmlFor="nubmer">
                         nubmer
                         <input
-                          type="text"
+                          type="number"
                           name="nubmer"
                           placeholder="Put episode nubmer here..."
                           value={nubmer}

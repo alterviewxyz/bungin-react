@@ -132,7 +132,7 @@ class PublishPodcastForm extends Component {
                       />
                     </label>
 
-                    <label htmlFor="title">
+                    <label htmlFor="subtitle">
                       sub title
                       <input
                         type="text"
