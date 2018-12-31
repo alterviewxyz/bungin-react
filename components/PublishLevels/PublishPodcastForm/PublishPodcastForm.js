@@ -175,7 +175,6 @@ class PublishPodcastForm extends Component {
                         id="file"
                         name="image"
                         placeholder="Upload an image"
-                        required
                         onChange={this.uploadFile}
                       />
                       <input
@@ -200,7 +199,6 @@ class PublishPodcastForm extends Component {
                         id="file"
                         name="largeimage"
                         placeholder="Upload an image"
-                        required
                         onChange={this.uploadFile}
                       />
                       <input
