@@ -1,3 +1,4 @@
+/* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/no-unescaped-entities */
 import * as React from 'react';
 import { Flex } from '@rebass/grid';
@@ -14,7 +15,7 @@ const Columns = styled.div`
   grid-gap: 20px;
 `;
 
-const Add_Podcast = ({ slug }) => (
+const Add_Podcast = ({ query }) => (
   <Flex flex="1 1 auto" flexDirection="column">
     <Flex py={5} flexDirection="column" alignItems="center" as="section">
       <Container justifyContent="flex-start" flexDirection="column">
@@ -22,7 +23,10 @@ const Add_Podcast = ({ slug }) => (
           <SloganTitle>
             Finally! The podcast is here! If everything is alright you can now
             navigate to podcast page at
-            <Link as={`/p/${slug}`} href={`/singlePodcastStation?slug=${slug}`}>
+            <Link
+              as={`/p/${query.slug}`}
+              href={`/singlePodcastStation?slug=${query.slug}`}
+            >
               <a> it's page.</a>
             </Link>
           </SloganTitle>
