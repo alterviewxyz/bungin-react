@@ -10,5 +10,6 @@
     "react/forbid-prop-types": [1, {}],
     "import/no-extraneous-dependencies": [2, { "devDependencies": true }]
   },
-  "parser": "babel-eslint"
+  "parser": "babel-eslint",
+  "globals": { "fetch": false, "FormData": false }
 }
