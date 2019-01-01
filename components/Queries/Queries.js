@@ -30,6 +30,7 @@ const SINGLE_PODCAST_STATION_QUERY = gql`
       pending
       description
       image
+      largeImage
       # subscribers {
       # }
       episodesId {

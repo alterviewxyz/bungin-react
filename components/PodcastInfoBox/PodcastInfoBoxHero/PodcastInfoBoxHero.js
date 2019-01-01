@@ -23,7 +23,9 @@ const HeroStyles = styled.div`
     top: 0;
     left: 0;
     background: red;
-    background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/hobbit_bg.jpg');
+    background: url(${props => props.header});
+    background-size: cover;
+    filter: blur(2px) brightness(60%) grayscale(30%);
     z-index: -1;
     transform: skewY(-2.2deg);
     transform-origin: 0 0;
@@ -45,20 +47,21 @@ const HeroStyles = styled.div`
         margin-left: 12px;
         background: #c4af3d;
         border-radius: 5px;
-        color: #544c21;
+        color: #f3f3f7;
         font-size: 14px;
         padding: 0px 4px;
       }
     }
 
     .title2 {
-      color: #c7c1ba;
+      color: #f3f3f7;
       font-size: 23px;
       font-weight: 300;
       margin-bottom: 15px;
     }
 
     .likes {
+      color: #f3f3f7;
       margin-left: 24px;
     }
 
@@ -71,8 +74,14 @@ const HeroStyles = styled.div`
   }
 `;
 
-const PodcastInfoBoxHero = ({ pending, title, subtitle, subscriber }) => (
-  <HeroStyles>
+const PodcastInfoBoxHero = ({
+  pending,
+  title,
+  subtitle,
+  largeImage,
+  subscriber
+}) => (
+  <HeroStyles header={largeImage}>
     <div className="details">
       {pending ? (
         <Stamp>

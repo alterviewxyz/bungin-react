@@ -45,6 +45,7 @@ const PodcastInfoBoxStyles = styled.div`
   .container {
     margin: 0 auto;
     min-width: 780px;
+    width: -webkit-fill-available;
     min-height: 700px;
     background: #f0f0ed;
     border-radius: 5px;
@@ -168,6 +169,7 @@ class PodcastInfoBox extends Component {
             title,
             subtitle,
             image,
+            largeImage,
             description,
             pending,
             episodesId
@@ -185,6 +187,7 @@ class PodcastInfoBox extends Component {
                   <PodcastInfoBoxHero
                     title={title}
                     subtitle={subtitle}
+                    largeImage={largeImage}
                     pending={pending}
                   />
                   <PodcastInfoBoxDescription description={description}>
