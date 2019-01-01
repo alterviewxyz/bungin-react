@@ -26,6 +26,7 @@ const SINGLE_PODCAST_STATION_QUERY = gql`
     podcastStation(where: { slug: $slug }) {
       id
       title
+      subtitle
       pending
       description
       image
@@ -36,6 +37,7 @@ const SINGLE_PODCAST_STATION_QUERY = gql`
         mp3
         episodeNubmer
         title
+        subtitle
         description
         image
         tag {

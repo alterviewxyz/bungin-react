@@ -12,6 +12,7 @@ const PodcastInfoBoxEpisodeCards = ({ episodes }) => (
         id={episode.id}
         slug={episode.slug}
         title={episode.title}
+        subtitle={episode.subtitle}
         description={episode.description}
         image={episode.image}
         podcastTitle={episode.podcastTitle}

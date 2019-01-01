@@ -164,24 +164,31 @@ class PodcastInfoBox extends Component {
           if (error) return <Error error={error} />;
           if (loading) return <p>Loading...</p>;
           if (!data.podcastStation) return <p>No Podcast Found for {slug}</p>;
-          const item = data.podcastStation;
+          const {
+            title,
+            subtitle,
+            image,
+            description,
+            pending,
+            episodesId
+          } = data.podcastStation;
           return (
             <PodcastInfoBoxStyles>
               <Head>
-                <title>Bungin - {item.title}</title>
+                <title>Bungin - {title}</title>
               </Head>
               <div className="movie-card">
                 <div className="container">
                   <a>
-                    <img src={item.image} alt={item.title} className="cover" />
+                    <img src={image} alt={title} className="cover" />
                   </a>
                   <PodcastInfoBoxHero
-                    title={item.title}
-                    subTitle={item.description}
-                    pending={item.pending}
+                    title={title}
+                    subtitle={subtitle}
+                    pending={pending}
                   />
-                  <PodcastInfoBoxDescription description={item.description}>
-                    <PodcastInfoBoxEpisodeCards episodes={item.episodesId} />
+                  <PodcastInfoBoxDescription description={description}>
+                    <PodcastInfoBoxEpisodeCards episodes={episodesId} />
                   </PodcastInfoBoxDescription>
                 </div>
               </div>

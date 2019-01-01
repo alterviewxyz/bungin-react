@@ -184,6 +184,7 @@ class EpisodeCard extends Component {
       id,
       slug,
       title,
+      subtitle,
       description,
       image,
       podcastTitle,
@@ -202,7 +203,7 @@ class EpisodeCard extends Component {
               alt={podcastTitle + ' - ' + title}
             />
             <h1>{title}</h1>
-            <h4>قسمت چهارم</h4>
+            <h4>{subtitle || `Episode ${episodeNubmer}`}</h4>
             <span className="minutes">{Math.trunc(duration / 60)} min</span>
             <p className="type">Action, Crime, Fantasy</p>
           </div>

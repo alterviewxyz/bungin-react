@@ -71,20 +71,20 @@ const HeroStyles = styled.div`
   }
 `;
 
-const PodcastInfoBoxHero = props => (
+const PodcastInfoBoxHero = ({ pending, title, subtitle, subscriber }) => (
   <HeroStyles>
     <div className="details">
-      {props.pending ? (
+      {pending ? (
         <Stamp>
           <div className="title1">
-            {props.title} <span>PG-13</span>
+            {title} <span>PG-13</span>
           </div>
         </Stamp>
       ) : (
         <> </>
       )}
 
-      <div className="title2">{props.subTitle}</div>
+      <div className="title2">{subtitle}</div>
 
       <fieldset className="rating">
         <input type="radio" id="star5" name="rating" value="5" />
@@ -125,7 +125,7 @@ const PodcastInfoBoxHero = props => (
         />
       </fieldset>
 
-      <span className="likes">109 likes</span>
+      <span className="likes">{subscriber || 0} Subscriber(s)</span>
     </div>
     {/* <!-- end details --> */}
   </HeroStyles>
