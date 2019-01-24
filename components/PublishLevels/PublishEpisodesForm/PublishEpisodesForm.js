@@ -66,7 +66,7 @@ class PublishEpisodesForm extends Component {
     if (nextToGo <= 0) {
       Router.push({
         pathname: '/publish/step3',
-        query: { slug: podcastSlug }
+        query: { slug: podcastSlug, id }
       });
       return true;
     }

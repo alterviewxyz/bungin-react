@@ -193,6 +193,7 @@ const UPDATE_PODCAST_STATION = gql`
     $largeimage: String
     $language: String
     $website: String
+    $pending: Boolean
   ) {
     updatePodcastStation(
       id: $id
@@ -206,6 +207,7 @@ const UPDATE_PODCAST_STATION = gql`
         largeImage: $largeimage
         language: $language
         website: $website
+        pending: $pending
       }
     ) {
       id
