@@ -14,7 +14,7 @@ const ItemsList = styled.div`
 `;
 
 const ManagePodcasts = props => (
-  <Query query={ALL_PODCAST_STATIONS_QUERY}>
+  <Query query={ALL_PODCAST_STATIONS_QUERY} variables={{ pending: false }}>
     {({ data, error, loading }) => {
       if (loading) return <p>Loading...</p>;
       if (error) return <p>Error: {error.message}</p>;
