@@ -19,6 +19,7 @@ const PodcastInfoBoxEpisodeCards = ({ episodes }) => (
         duration={episode.duration}
         date={episode.date}
         episodeNubmer={episode.episodeNubmer}
+        mp3={episode.mp3}
       />
     ))}
   </EpisodeCards>

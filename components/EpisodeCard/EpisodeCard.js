@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/media-has-caption */
 /* eslint-disable jsx-a11y/accessible-emoji */
 import React, { Component } from 'react';
 import gql from 'graphql-tag';
@@ -190,7 +191,8 @@ class EpisodeCard extends Component {
       podcastTitle,
       duration,
       date,
-      episodeNubmer
+      episodeNubmer,
+      mp3
     } = this.props;
     return (
       <EpisodeStyles img={image} className="episode-card">
@@ -211,6 +213,7 @@ class EpisodeCard extends Component {
             <p className="text">{getExcerpt(description, 200)}</p>
           </div>
           <div className="episode_social">
+            <audio src={mp3} controls />
             <ul>
               <li>
                 <i>❤️</i>
