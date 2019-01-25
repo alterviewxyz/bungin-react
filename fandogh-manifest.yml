@@ -1,7 +1,7 @@
 kind: ExternalService
 name: bungin-react
 spec:
-  image: bunging-react:${IMAGE_VERSION}
+  image: bungin-react:${IMAGE_VERSION}
   port: 3000
   env:
   - name: ENDPOINT
