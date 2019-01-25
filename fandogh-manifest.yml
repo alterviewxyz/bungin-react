@@ -1,0 +1,8 @@
+kind: ExternalService
+name: bungin-react
+spec:
+  image: bunging-react:${IMAGE_VERSION}
+  port: 3000
+  env:
+  - name: ENDPOINT
+    value: http://localhost:5555
