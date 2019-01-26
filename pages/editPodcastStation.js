@@ -18,17 +18,15 @@ const Right = styled.div`
 
 const Left = styled.div``;
 
-const editPodcastStation = ({ slug }) => (
+const editPodcastStation = ({ query }) => (
   <Flex flex="1 1 auto" flexDirection="column">
     <Flex py={5} flexDirection="column" alignItems="center" as="section">
       <Container justifyContent="flex-start" flexDirection="column">
-        <SloganTitle>Podcast slug is: {slug}</SloganTitle>
+        <SloganTitle>Podcast slug is: {query.slug}</SloganTitle>
         <Columns>
-          <Right>
-            <EditPodcastForm slug={slug} />
-          </Right>
+          <Right>{/* <EditPodcastForm slug={query.slug} /> */}</Right>
           <Left>
-            <PodcastInfoBox slug={slug} />
+            <PodcastInfoBox slug={query.slug} />
           </Left>
         </Columns>
       </Container>
