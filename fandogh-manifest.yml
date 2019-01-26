@@ -4,5 +4,5 @@ spec:
   image: bungin-react:${IMAGE_VERSION}
   port: 3000
   env:
-  - name: ENDPOINT
-    value: http://localhost:5555
+    - name: ENDPOINT
+      value: https://bungin-server.alterview.xyz/
