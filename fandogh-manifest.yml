@@ -6,3 +6,5 @@ spec:
   env:
     - name: ENDPOINT
       value: https://bungin-server.alterview.xyz/
+    - name: NODE_ENV
+      value: production
