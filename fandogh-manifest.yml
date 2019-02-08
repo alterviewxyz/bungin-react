@@ -3,6 +3,8 @@ name: bungin-react
 spec:
   image: bungin-react:${IMAGE_VERSION}
   port: 3000
+  domains:
+    - name: bungin.alterview.xyz
   env:
     - name: ENDPOINT
       value: https://bungin-server.alterview.xyz/
