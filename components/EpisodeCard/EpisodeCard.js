@@ -177,6 +177,12 @@ const EpisodeStyles = styled.div`
     box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.27);
     z-index: 1;
   }
+
+  audio {
+    margin: 0;
+    width: 550px;
+    height: 25px;
+  }
 `;
 
 class EpisodeCard extends Component {

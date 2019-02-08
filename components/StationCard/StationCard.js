@@ -10,9 +10,9 @@ function getExcerpt(str = '', limit) {
 }
 
 const StationStyles = styled.div`
-  width: 500px;
-  height: 200px;
-  background: transparent;
+  width: 360px;
+  height: 150px;
+  background: #000000;
   position: relative;
   left: 0;
   right: 0;
@@ -24,7 +24,7 @@ const StationStyles = styled.div`
 
   .stationcard_left {
     width: 40%;
-    height: 200px;
+    height: 150px;
     float: left;
     overflow: hidden;
     background: transparent;
@@ -36,6 +36,8 @@ const StationStyles = styled.div`
       -webkit-border-radius: 10px 0 0 10px;
       -moz-border-radius: 10px 0 0 10px;
       position: relative;
+      padding-top: 3px;
+      padding-bottom: 3px;
     }
   }
 
@@ -43,7 +45,7 @@ const StationStyles = styled.div`
     width: 60%;
     float: left;
     background: #000000;
-    height: 200px;
+    height: 150px;
     border-radius: 0 10px 10px 0;
     -webkit-border-radius: 0 10px 10px 0;
     -moz-border-radius: 0 10px 10px 0;
@@ -53,7 +55,7 @@ const StationStyles = styled.div`
       font-family: 'Montserrat', sans-serif;
       font-weight: 400;
       text-align: left;
-      font-size: 30px;
+      font-size: 25px;
       margin: 5px 0 0 0;
       padding: 0 0 0 5px;
       letter-spacing: 1px;
@@ -144,15 +146,15 @@ class StationCard extends Component {
           <div className="stationcard_right__details">
             <ul>
               <li>15 Subscribers</li>
-              <li>50 min~ </li>
-              <li>{upvotes} UpVote</li>
+              {/* <li>50 min~ </li>
+              <li>{upvotes} UpVote</li> */}
             </ul>
             <div className="stationcard_right__rating">
               <div className="stationcard_right__rating__stars" />
             </div>
             <div className="stationcard_right__review">
               <p>
-                {description}{' '}
+                {/* {description}{' '} */}
                 <Link as={`/p/${slug}`} href={`/p?slug=${slug}`}>
                   Read more...
                 </Link>

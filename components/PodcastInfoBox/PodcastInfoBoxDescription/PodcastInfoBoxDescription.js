@@ -34,8 +34,17 @@ const DescriptionStyles = styled.div`
     padding-left: 41px;
     padding-top: 30px;
     margin-left: 20px;
-    width: 480px;
     float: left;
+
+    p.descrabtion {
+      color: #000000ab;
+      direction: rtl;
+      box-shadow: 0px 0px 120px -25px rgba(0, 0, 0, 0.5);
+      box-sizing: border-box;
+      background-color: white;
+      padding: 16px;
+      border-radius: 8px;
+    }
   }
 
   .avatars {
@@ -62,7 +71,7 @@ const PodcastInfoBoxDescription = ({ description, children }) => (
       <span className="tag">adventure</span>
     </div>
     <div className="column2">
-      <p>
+      <p className="descrabtion">
         {
           // eslint-disable-next-line react/destructuring-assignment
           description
