@@ -11,6 +11,33 @@ const CURRENT_USER_QUERY = gql`
   }
 `;
 
+const USER_QUERY = gql`
+  query USER_QUERY($username: String!) {
+    user(username: $username) {
+      id
+      email
+      name
+      permissions
+      subscribes {
+        id
+        slug
+      }
+      owns {
+        id
+        slug
+      }
+      votes {
+        id
+      }
+      followerCount
+      folloingCount
+      following {
+        id
+      }
+    }
+  }
+`;
+
 const ADD_PODCAST_FROM_URL_MUTATION = gql`
   mutation ADD_PODCAST_FROM_URL_MUTATION($rss: String!) {
     addPodcastFromURL(rss: $rss) {
@@ -220,6 +247,7 @@ const UPDATE_PODCAST_STATION = gql`
 
 export {
   CURRENT_USER_QUERY,
+  USER_QUERY,
   ADD_PODCAST_FROM_URL_MUTATION,
   SINGLE_PODCAST_STATION_QUERY,
   ALL_PODCAST_STATIONS_QUERY,

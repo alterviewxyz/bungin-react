@@ -17,6 +17,12 @@ app
       app.render(req, res, actualPage, queryParams);
     });
 
+    server.get('/user/:username', (req, res) => {
+      const actualPage = '/singleUser';
+      const queryParams = { username: req.params.username };
+      app.render(req, res, actualPage, queryParams);
+    });
+
     server.get('/editPodcast/:slug', (req, res) => {
       const actualPage = '/editPodcastStation';
       const queryParams = { slug: req.params.slug };
